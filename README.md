@@ -5,7 +5,7 @@
 #### 支持小红点 &amp;&amp; 懒加载 &amp;&amp; 缓存 &amp;&amp; 排序 &amp;&amp; 增删等。<br>
 
 ### 一言不合就上效果图
-<img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/slide.gif"  width=250 height=445 /><br>
+<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/slide.gif"  width=250 height=445 /><br>
 <img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/shake.gif"  width=250 height=445 /><br>
 <img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/deleteAndAdd.gif"  width=250 height=445 /><br>
 <img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/redPoint.gif"  width=250 height=445 /><br>
