@@ -10,6 +10,13 @@
 &emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/deleteAndAdd.gif"  width=200 height=350 />
 &emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/redPoint.gif"  width=200 height=350 />
 
+### Function Description
+1. 单个频道小红点标识：JhtNewsChannelItemModel中isShowRedPoint为BOOL值，在生成频道栏数据Model时可以一起添加频道是否有小红点标识，在后续调接口设置小红点状态依旧照前述可以实现；
+2. 懒加载：页面不会全部加载，点击或者滑动到哪里加载相应页面，同时可以自己设置缓存的个数；
+3. 频道栏排序：可以在排序界面进行自定义排序；
+4. 频道增删：可以在排序界面进行自定义的增删频道，同时囊括排序功能。
+注：排序或者增删之后的相应页面均可在缓存中找到！
+
 ### How to use
 1. JhtNewsChannelItemModel:顶部频道Model,开发者可以继承这个model，来扩展满足自己需求的model;
 2. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model。 注意:  channelArray:频道数组这个属性，是用于存储JhtNewsChannelItemModel的数组;
