@@ -20,9 +20,9 @@
 
 ## GO
 ### How to use
-1. 个性设置<br>
-&emsp;a. JhtNewsChannelItemModel：顶部频道Model，你可以继承这个model，来扩展满足自己需求的model；
-&emsp;b. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model，注意: channelArray：频道数组这个属性，是用于存储JhtNewsChannelItemModel的数组；
+1. 个性设置
+&emsp;a. JhtNewsChannelItemModel：顶部频道Model，你可以继承这个model，来扩展满足自己需求的model；<br>
+&emsp;b. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model，注意: channelArray：频道数组这个属性，是用于存储JhtNewsChannelItemModel的数组；<br>
 &emsp;c. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model;
 2. 建立滑频道条和可滑动的view。
 ```oc
