@@ -2,9 +2,15 @@
 
 ## Contents
 #### 新闻频道栏（网易新闻，新浪新闻，搜狐新闻，今日头条，聚划算，腾讯视频，优酷等类似的频道栏）<br>
-#### 支持懒加载 &amp;&amp; 缓存 &amp;&amp; 排序 &amp;&amp; 增删等。<br>
+#### 支持小红点 &amp;&amp; 懒加载 &amp;&amp; 缓存 &amp;&amp; 排序 &amp;&amp; 增删等。<br>
 
 ### 一言不合就上效果图
+<img src="https://raw.githubusercontent.com/jinht/JhtShopCarAnimationDemo/master/ReadMEImages/Gif/slide.gif"  width=250 height=445 /><br>
+<img src="https://raw.githubusercontent.com/jinht/JhtShopCarAnimationDemo/master/ReadMEImages/Gif/shake.gif"  width=250 height=445 /><br>
+<img src="https://raw.githubusercontent.com/jinht/JhtShopCarAnimationDemo/master/ReadMEImages/Gif/deleteAndAdd.gif"  width=250 height=445 /><br>
+<img src="https://raw.githubusercontent.com/jinht/JhtShopCarAnimationDemo/master/ReadMEImages/Gif/redPoint.gif"  width=250 height=445 /><br>
+
+### How to use
 1. JhtNewsChannelItemModel:顶部频道Model,开发者可以继承这个model，来扩展满足自己需求的model;
 2. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model。 注意:  channelArray:频道数组这个属性，是用于存储JhtNewsChannelItemModel的数组;
 3. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model;
@@ -39,19 +45,19 @@
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
 ```
-6.JhtChannelBarAndSlideViewConnect中
+6.JhtChannelBarAndSlideViewConnect中<br>
 a. 判断频道栏尾部加号按钮是否可以被点击
 ```oc
-/** 
+/** 判断频道栏尾部按钮是否可以被点击
  *  enable:yes可以被点击 
  */
 - (void)judgeChannelBarTailBtnIsEnableClick:(BOOL)enable;
 ```
 b.隐藏或者出现小红点
 ```oc
-/** 
- * hidden：yes隐藏
- * index：topBar 中频道栏的index
+/** 隐藏或者出现小红点
+ *  hidden：yes隐藏
+ *  index：topBar 中频道栏的index
  */
 - (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
 ```
