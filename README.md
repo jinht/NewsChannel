@@ -20,7 +20,7 @@
 
 ## GO
 ### How to use
-1. 个性设置
+1. 个性设置<br>
 &emsp;a. JhtNewsChannelItemModel：顶部频道Model，你可以继承这个model，来扩展满足自己需求的model；<br>
 &emsp;b. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model，注意: channelArray：频道数组这个属性，是用于存储JhtNewsChannelItemModel的数组；<br>
 &emsp;c. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model;
@@ -36,7 +36,7 @@
  */
 - (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
 ```
-5.需要实现的JhtTotalSlideViewDelegate代理方法：
+3.需要实现的JhtTotalSlideViewDelegate代理方法
 ```oc
 @protocol JhtTotalSlideViewDelegate <NSObject>
 /** VC总数量 */
@@ -55,15 +55,15 @@
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
 ```
-6.JhtChannelBarAndSlideViewConnect中<br>
-a. 判断频道栏尾部加号按钮是否可以被点击
+4.JhtChannelBarAndSlideViewConnect中<br>
+&emsp;a. 判断频道栏尾部加号按钮是否可以被点击
 ```oc
 /** 判断频道栏尾部按钮是否可以被点击
  *  enable:yes可以被点击 
  */
 - (void)judgeChannelBarTailBtnIsEnableClick:(BOOL)enable;
 ```
-b.隐藏或者出现小红点
+&emsp;b.隐藏或者出现小红点
 ```oc
 /** 隐藏或者出现小红点
  *  hidden：yes隐藏
