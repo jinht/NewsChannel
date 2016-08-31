@@ -6,7 +6,7 @@
 
 ### 一言不合就上效果图
 1. JhtNewsChannelItemModel:顶部频道Model,开发者可以继承这个model，来扩展满足自己需求的model;
-2. 1. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model。 注意:  channelArray:频道数组这个属性，是用于存储JhtNewsChannelItemModel的数组;
+2. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model。 注意:  channelArray:频道数组这个属性，是用于存储JhtNewsChannelItemModel的数组;
 3. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model;
 4. 建立滑频道条和可滑动的view;
 ```oc
@@ -19,8 +19,7 @@
  *  titleArray：所有的名字数组
  */
 - (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
-```oc
-
+```
 5.需要实现的JhtTotalSlideViewDelegate代理方法：
 ```oc
 @protocol JhtTotalSlideViewDelegate <NSObject>
@@ -39,7 +38,7 @@
  *  selectedIndex：选中的index
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
-```oc
+```
        
 ###Remind
 * ARC
