@@ -6,10 +6,10 @@
 
 
 ### 一言不合就上效果图
-<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/slide.gif"  width=250 height=445 /><br>
-<img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/shake.gif"  width=250 height=445 /><br>
-<img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/deleteAndAdd.gif"  width=250 height=445 /><br>
-<img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/redPoint.gif"  width=250 height=445 /><br>
+<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/slide.gif"  width=250 height=445 />
+       <img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/shake.gif"  width=250 height=445 /><br>
+<img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/deleteAndAdd.gif"  width=250 height=445 />
+       <img src="https://raw.githubusercontent.com/jinht/JhtNewsChannelDemo/master/ReadMEImages/Gif/redPoint.gif"  width=250 height=445 /><br>
 
 ### How to use
 1. JhtNewsChannelItemModel:顶部频道Model,开发者可以继承这个model，来扩展满足自己需求的model;
