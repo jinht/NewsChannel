@@ -39,7 +39,23 @@
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
 ```
-       
+6.JhtChannelBarAndSlideViewConnect中
+a. 判断频道栏尾部加号按钮是否可以被点击
+```oc
+/** 
+ *  enable:yes可以被点击 
+ */
+- (void)judgeChannelBarTailBtnIsEnableClick:(BOOL)enable;
+```
+b.隐藏或者出现小红点
+```oc
+/** 
+ * hidden：yes隐藏
+ * index：topBar 中频道栏的index
+ */
+- (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
+```
+
 ###Remind
 * ARC
 * iOS >= 7.0
