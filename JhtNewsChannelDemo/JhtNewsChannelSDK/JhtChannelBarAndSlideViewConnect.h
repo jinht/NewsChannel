@@ -10,11 +10,6 @@
 #import "JhtNewsChannelItemEditParamModel.h"
 #import "JhtChannelBarAndSlideViewConnectParamModel.h"
 
-/** 屏幕的宽度*/
-#define FrameW [UIScreen mainScreen].bounds.size.width
-/** 屏幕的高度 */
-#define FrameH [UIScreen mainScreen].bounds.size.height
-
 /** 频道栏和下边滚动View的桥梁 */
 @interface JhtChannelBarAndSlideViewConnect : JhtTotalSlideView
 #pragma mark - property
