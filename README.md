@@ -79,11 +79,13 @@
 ####5.修改SDK切图资源
 &emsp;如需替换SDK中的切图资源可以直接将`JhtNewsChannelImages.bundle`中的切图同名替换即可
 
+
 ###Remind
 * ARC
 * iOS >= 7.0
 * iPhone \ iPad 
        
+
 ## Hope
 * If you find bug when used，Hope you can Issues me，Thank you or try to download the latest code of this framework to see the BUG has been fixed or not
 * If you find the function is not enough when used，Hope you can Issues me，I very much to add more useful function to this framework ，Thank you !
