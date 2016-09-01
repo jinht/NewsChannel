@@ -59,7 +59,7 @@
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
 ```
 
-4.  `JhtChannelBarAndSlideViewConnect` 方法
+4. `JhtChannelBarAndSlideViewConnect` 方法
 &emsp;a. 判断频道栏尾部按钮是否可以被点击
 ```oc
 /** 判断频道栏尾部按钮是否可以被点击
@@ -76,7 +76,7 @@
 - (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
 ```
 
-5.  修改SDK切图资源
+5. 修改SDK切图资源
 &emsp;如需替换SDK中的切图资源可以直接将`JhtNewsChannelImages.bundle`中的切图同名替换即可
 
 ###Remind
