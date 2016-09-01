@@ -21,13 +21,13 @@
 
 ## GO
 ### How to use
-#####1. 个性设置<br>
+####1. 个性设置<br>
 &emsp;a. JhtNewsChannelItemModel：顶部频道Model，你可以继承这个model，来扩展满足自己需求的model；<br>
 &emsp;b. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model，注意: channelArray：频道数组这个属性，是用于存储`JhtNewsChannelItemModel`的数组；<br>
 &emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中`notMoveNameArray`参数设置频道位置固定；<br>
 &emsp;d. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model。
 
-#####2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
+####2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
 ```oc
 /** 创建BarAndSliderView
  *  barAndSlideModel：用于设置sliderView和bar参数model
