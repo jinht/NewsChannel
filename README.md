@@ -28,6 +28,17 @@
 &emsp;d. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model。
 
 2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
+```oc
+/** 创建BarAndSliderView
+ *  barAndSlideModel：用于设置sliderView和bar参数model
+ *  itemEditModel：用于排序界面的参数设置
+ *  delegate：代理
+ *  baseViewController：所处于的VC
+ *  sortFView：排序界面放入的父view
+ *  titleArray：所有的名字数组
+ */
+- (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
+```
 
 3. JhtTotalSlideViewDelegate 方法
 ```oc
