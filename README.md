@@ -39,7 +39,6 @@
  */
 - (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
 ```
-
 3. JhtTotalSlideViewDelegate 方法
 ```oc
 @protocol JhtTotalSlideViewDelegate <NSObject>
@@ -58,7 +57,6 @@
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
 ```
-
 4. `JhtChannelBarAndSlideViewConnect` 方法
 &emsp;a. 判断频道栏尾部按钮是否可以被点击
 ```oc
