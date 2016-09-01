@@ -38,7 +38,7 @@
  */
 - (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
 ```
-3. JhtTotalSlideViewDelegate 
+3. JhtTotalSlideViewDelegate
 ```oc
 @protocol JhtTotalSlideViewDelegate <NSObject>
 /** VC总数量 */
@@ -56,8 +56,8 @@
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
 ```
-4. `JhtChannelBarAndSlideViewConnect`
-&emsp;a. 判断频道栏尾部按钮是否可以被点击
+4.  `JhtChannelBarAndSlideViewConnect`
+5.  &emsp;a. 判断频道栏尾部按钮是否可以被点击
 ```oc
 /** 判断频道栏尾部按钮是否可以被点击
  *  enable:yes可以被点击 
@@ -72,7 +72,7 @@
  */
 - (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
 ```
-5. 修改SDK切图资源
+5.  修改SDK切图资源
 &emsp;如需替换SDK中的切图资源可以直接将`JhtNewsChannelImages.bundle`中的切图同名替换即可
 
 ###Remind
