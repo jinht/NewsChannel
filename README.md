@@ -16,18 +16,18 @@
 3. 频道位置固定：可以设置单个或多个频道位置不可变动；
 4. 频道栏排序：可以在排序界面进行自定义排序（会有颤抖提示）；
 5. 频道增删：可以在排序界面进行自定义的增删频道，同时囊括排序功能。<br>
-注：排序或者增删之后的相应页面均可在缓存中找到！
+注：排序或者增删之后的相应页面均可在缓存中找到！<br>
 
 
 ## GO
 ### How to use
-####1. 个性设置<br>
+#####1. 个性设置<br>
 &emsp;a. JhtNewsChannelItemModel：顶部频道Model，你可以继承这个model，来扩展满足自己需求的model；<br>
 &emsp;b. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model，注意: channelArray：频道数组这个属性，是用于存储`JhtNewsChannelItemModel`的数组；<br>
 &emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中`notMoveNameArray`参数设置频道位置固定；<br>
 &emsp;d. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model。
 
-####2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
+#####2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
 ```oc
 /** 创建BarAndSliderView
  *  barAndSlideModel：用于设置sliderView和bar参数model
