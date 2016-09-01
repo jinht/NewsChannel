@@ -11,8 +11,8 @@
 &emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/redPoint.gif"  width=200 height=350 />
 
 ### Function Description
-1. 单个频道小红点标识：JhtNewsChannelItemModel中isShowRedPoint为BOOL值，在生成频道栏数据Model时可以一起添加频道是否有小红点标识，在后续调接口设置小红点状态依旧照前述可以实现；
-2. 懒加载：页面不会全部加载，点击或者滑动到哪里加载相应页面，同时可以自己设置缓存的个数；
+1. 单个频道小红点标识：`JhtNewsChannelItemModel`中`isShowRedPoint`为BOOL值，在生成频道栏数据Model时可以一起添加频道是否有小红点标识，在后续调接口设置小红点状态依旧照前述可以实现；
+2. 懒加载：页面不会全部加载（非scrollview），点击或者滑动到哪里加载相应页面，同时可以自己设置缓存的个数；
 3. 频道位置固定：可以设置单个或多个频道位置不可动；
 4. 频道栏排序：可以在排序界面进行自定义排序；
 5. 频道增删：可以在排序界面进行自定义的增删频道，同时囊括排序功能。<br>
@@ -23,8 +23,8 @@
 ### How to use
 1. 个性设置<br>
 &emsp;a. JhtNewsChannelItemModel：顶部频道Model，你可以继承这个model，来扩展满足自己需求的model；<br>
-&emsp;b. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model，注意: channelArray：频道数组这个属性，是用于存储JhtNewsChannelItemModel的数组；<br>
-&emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中notMoveNameArray参数设置频道位置固定；
+&emsp;b. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model，注意: channelArray：频道数组这个属性，是用于存储`JhtNewsChannelItemModel`的数组；<br>
+&emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中`notMoveNameArray`参数设置频道位置固定；
 &emsp;d. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model；
 2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
 ```oc
@@ -38,7 +38,7 @@
  */
 - (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
 ```
-3.需要实现的JhtTotalSlideViewDelegate代理方法
+3. 需要实现的JhtTotalSlideViewDelegate代理方法
 ```oc
 @protocol JhtTotalSlideViewDelegate <NSObject>
 /** VC总数量 */
@@ -46,7 +46,6 @@
 /** 当前index下的VC */
 - (UIViewController *)JhtTotalSlideView:(JhtTotalSlideView *)sender controllerAt:(NSInteger)index;
 
-@optional
 /** 点击VC的index */
 - (void)JhtTotalSlideView:(JhtTotalSlideView *)sender didSelectedAt:(NSInteger)index;
 
@@ -57,8 +56,8 @@
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
 ```
-4.JhtChannelBarAndSlideViewConnect中<br>
-&emsp;a. 判断频道栏尾部加号按钮是否可以被点击
+4.`JhtChannelBarAndSlideViewConnect`<br>
+&emsp;a. 判断频道栏尾部按钮是否可以被点击
 ```oc
 /** 判断频道栏尾部按钮是否可以被点击
  *  enable:yes可以被点击 
@@ -73,6 +72,8 @@
  */
 - (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
 ```
+5. 修改SDK切图资源
+&emsp;如需替换SDK中的切图资源可以直接将`JhtNewsChannelImages.bundle`中的切图同名替换即可
 
 ###Remind
 * ARC
