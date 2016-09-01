@@ -27,7 +27,7 @@
 &emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中`notMoveNameArray`参数设置频道位置固定；<br>
 &emsp;d. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model。
 
-2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
+2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现<br>
 ```oc
 /** 创建BarAndSliderView
  *  barAndSlideModel：用于设置sliderView和bar参数model
@@ -38,9 +38,9 @@
  *  titleArray：所有的名字数组
  */
 - (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
-```<br>
+```
 
-3. JhtTotalSlideViewDelegate 方法
+3. JhtTotalSlideViewDelegate 方法<br>
 ```oc
 @protocol JhtTotalSlideViewDelegate <NSObject>
 /** VC总数量 */
@@ -57,9 +57,9 @@
  *  selectedIndex：选中的index
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
-```<br>
+```
 
-4. `JhtChannelBarAndSlideViewConnect` 方法
+4. `JhtChannelBarAndSlideViewConnect` 方法<br>
 &emsp;a. 判断频道栏尾部按钮是否可以被点击
 ```oc
 /** 判断频道栏尾部按钮是否可以被点击
@@ -76,7 +76,7 @@
 - (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
 ```<br>
 
-5. 修改SDK切图资源
+5. 修改SDK切图资源<br>
 &emsp;如需替换SDK中的切图资源可以直接将`JhtNewsChannelImages.bundle`中的切图同名替换即可
 
 ###Remind
