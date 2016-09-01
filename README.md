@@ -24,7 +24,7 @@
 1. 个性设置<br>
 &emsp;a. JhtNewsChannelItemModel：顶部频道Model，你可以继承这个model，来扩展满足自己需求的model；<br>
 &emsp;b. JhtChannelBarAndSlideViewConnectParamModel: 用于频道栏字号，字间距，颜色，缓存页数等等的设置的参数model，注意: channelArray：频道数组这个属性，是用于存储`JhtNewsChannelItemModel`的数组；<br>
-&emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中`notMoveNameArray`参数设置频道位置固定；
+&emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中`notMoveNameArray`参数设置频道位置固定；<br>
 &emsp;d. JhtNewsChannelItemEditParamModel: 用于排序界面中相关设置参数model。
 
 2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
@@ -40,7 +40,7 @@
 - (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
 ```
 
-3. JhtTotalSlideViewDelegate SEl
+3. JhtTotalSlideViewDelegate 
 ```oc
 @protocol JhtTotalSlideViewDelegate <NSObject>
 /** VC总数量 */
