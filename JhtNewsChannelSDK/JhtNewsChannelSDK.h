@@ -8,5 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JhtNewsChannelItemModel.h"
+
+#import "JhtTotalSlideView.h"
 #import "JhtChannelBarAndSlideViewConnect.h"
+
+#import "JhtNewsChannelItemModel.h"
+#import "JhtNewsChannelItemEditParamModel.h"
+#import "JhtChannelBarAndSlideViewConnectParamModel.h"

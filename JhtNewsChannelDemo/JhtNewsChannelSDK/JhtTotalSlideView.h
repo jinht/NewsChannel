@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class JhtTotalSlideView;
 
-#pragma mark - protocol
+#pragma mark - property
 @protocol JhtTotalSlideViewDelegate <NSObject>
 /** VC总数量 */
 - (NSInteger)numberOfTabsInJhtTotalSlideView:(JhtTotalSlideView *)sender;

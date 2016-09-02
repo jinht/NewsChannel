@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JhtNewsChannelItemModel.h"
 
 /** 用于JhtChannelBarAndSlideViewConnect 设置的参数model */
 @interface JhtChannelBarAndSlideViewConnectParamModel : NSObject
-
 /** sliderView的坐标 */
 @property (nonatomic, assign) CGRect sliderFrame;
 /** 顶部频道条的坐标 */
@@ -19,6 +19,8 @@
 @property (nonatomic, assign) CGFloat itemSpace;
 /** 频道栏与VC之间的距离 */
 @property (nonatomic, assign) float channelBarBottomSpace;
+/** 频道条两边空白距离 */
+@property (nonatomic, assign) CGFloat itemTopBarSpace;
 
 /** 缓存的页数 */
 @property (nonatomic, assign) NSInteger cacheCount;
@@ -31,10 +33,6 @@
 @property (nonatomic, strong) UIFont *itemNormalFont;
 /** 选中的字号 */
 @property (nonatomic, strong) UIFont *itemSelectedFont;
-
-
-/** 频道条两边空白距离 */
-@property (nonatomic, assign) CGFloat itemTopBarSpace;
 /** 小红点的宽度 */
 @property (nonatomic, assign) CGFloat itemRedWidth;
 /** 小红点和字之间的距离 */
@@ -44,13 +42,10 @@
 @property (nonatomic, strong) UIColor *trackColor;
 /** 选中的索引值 */
 @property (nonatomic, assign) NSInteger selectedIndex;
-
-/** 频道数组 */
-@property (nonatomic, strong) NSMutableArray *channelArray;
-/** 不能移动的名字数组 */
-@property (nonatomic, strong) NSMutableArray *notMoveNameArray;
-/** 上级传过来，装有ChannelModel 待添加的数组 */
+/** 待添加的数组 存储JhtNewsChannelItemModel */
 @property (nonatomic, strong) NSMutableArray *toAddItemArray;
+/** 不能移动频道的名字数组 */
+@property (nonatomic, strong) NSMutableArray *notMoveNameArray;
 
 /** 是否添加频道栏尾部的加号Btn */
 @property (nonatomic, assign) BOOL isAddTailBtn;

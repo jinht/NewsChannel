@@ -7,8 +7,9 @@
 //
 
 #import "JhtNewsChannelViewController.h"
-#import "JhtNewsChannelSDK.h"
 #import "JhtNewsViewController.h"
+#import "JhtNewsChannelItemModel.h"
+#import "JhtChannelBarAndSlideViewConnect.h"
 
 /** 顶部滑动的条高度 */
 #define KTopSCHeight (90/2)
@@ -41,7 +42,7 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.95f green:0.86f blue:0.79f alpha:1.00f];
     
     // 生成数据源
-    [self ncCreateDatea];
+    [self ncCreateData];
     
     // 导航栏设置
     [self ncSetNav];
@@ -51,7 +52,7 @@
 
 #pragma mark - 生成数据源
 /** 生成数据源 */
-- (void)ncCreateDatea {
+- (void)ncCreateData {
     for (NSInteger i = 0; i < 15; i ++) {
         JhtNewsChannelItemModel *model = [[JhtNewsChannelItemModel alloc] init];
         model.titleName = [NSString stringWithFormat:@"NO.%ld", i + 1];
@@ -69,6 +70,7 @@
         }
         [self.channelArray addObject:model];
     }
+    // 待添加的数组
     for (NSInteger i = 0; i < 15; i ++) {
         JhtNewsChannelItemModel *model2 = [[JhtNewsChannelItemModel alloc] init];
         model2.titleName = [NSString stringWithFormat:@"New.%ld", i + 1];
@@ -99,6 +101,16 @@
 
 
 #pragma mark - 顶部频道条部分
+/** 建立滑动条 */
+- (void)ncCreateTopScrollViewWithTitleArray:(NSArray *)titleArray {
+    if (_slideView) {
+        [_slideView removeFromSuperview];
+    }
+    JhtChannelBarAndSlideViewConnectParamModel *barAndSlideModel = [self createBarAndSliderModel:titleArray];
+    _slideView = [[[JhtChannelBarAndSlideViewConnect alloc] init] initSlideViewAndItemEditViewWithBarAndSlideModel:barAndSlideModel withNewsChannelItemEditModel:self.itemEditModel withChanelArray:self.channelArray withBaseViewController:self withSortFView:self.navigationController.view withTitleArray:titleArray withDelegte:self];
+    [self.view addSubview:self.slideView];
+}
+
 /** 生成参数model */
 - (JhtChannelBarAndSlideViewConnectParamModel *)createBarAndSliderModel:(NSArray *)titleArray {
     JhtChannelBarAndSlideViewConnectParamModel *barAndSliderModel = [[JhtChannelBarAndSlideViewConnectParamModel alloc] init];
@@ -117,11 +129,11 @@
     // 轨道颜色
     barAndSliderModel.trackColor = UIColorFromRGB(0x61cbf5);
     // 整个topbar频道条两边空白距离
-    barAndSliderModel.itemTopBarSpace = 5;
+    barAndSliderModel.itemTopBarSpace = 0;
     // 小红点的宽度
     barAndSliderModel.itemRedWidth = 8;
     // 小红点和字之间的距离
-    barAndSliderModel.itemLabelToRedSpace = 4;
+    barAndSliderModel.itemLabelToRedSpace = 1;
     // 频道栏之间横向间距
     barAndSliderModel.itemSpace = 25*WidthScale375;
     // 频道栏与VC之间的距离
@@ -139,22 +151,9 @@
 //    barAndSliderModel.addImageView.image = addImage;
     // 装有ChannelModel 待添加的数组
     barAndSliderModel.toAddItemArray = self.toAddItemArray;
-    // 频道数组 
-    barAndSliderModel.channelArray = self.channelArray;
     // 选中的索引值
     barAndSliderModel.selectedIndex = _currentPageIndex;
     return barAndSliderModel;
-}
-
-/** 建立滑动条 */
-- (void)ncCreateTopScrollViewWithTitleArray:(NSArray *)titleArray {
-    if (_slideView) {
-        [_slideView removeFromSuperview];
-    }
-    JhtChannelBarAndSlideViewConnectParamModel *barAndSlideModel = [self createBarAndSliderModel:titleArray];
-    _slideView = [[[JhtChannelBarAndSlideViewConnect alloc] init] initSlideViewBarAndSlideModelWithModel:barAndSlideModel withNewsChannelItemEditModel:self.itemEditModel withDelegte:self withBaseViewController:self withSortFView:self.navigationController.view withTitleArray:titleArray];
-   
-    [self.view addSubview:self.slideView];
 }
 
 
@@ -169,8 +168,17 @@
         /** 中间已选部分和未选部分中间view 高度 */
         _itemEditModel.itemEditAddTipViewPartHeight = 60/2;
         
+        /** 排序顶部删除完成按钮 的 borderColor 颜色*/
+        _itemEditModel.itemEditConfirmButtonBorderColor = [UIColor redColor];
+        /** 排序顶部删除完成按钮 的 文字颜色 颜色 */
+        _itemEditModel.itemEditConfirmButtonTitleColor = [UIColor redColor];
+        /** 排序栏目切换 文字颜色*/
+        _itemEditModel.itemEditTipsLabelTextColor = [UIColor blackColor];
+        /** 排序 界面中 点击添加更多栏目 文字颜色 */
+        _itemEditModel.itemEditAddTipViewTextColor = [UIColor colorWithRed:0.07f green:0.07f blue:0.07f alpha:1.00f];
+        
         /** 每个频道的 宽度 */
-        _itemEditModel.itemEditChannelItemW = 75;
+        _itemEditModel.itemEditChannelItemW = 78;
         /** 每个频道的 高度 */
         _itemEditModel.itemEditChannelItemH = 32;
         

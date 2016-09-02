@@ -10,11 +10,6 @@
 #import "JhtNewsChannelItemEditParamModel.h"
 #import "JhtChannelBarAndSlideViewConnectParamModel.h"
 
-/** 屏幕的宽度*/
-#define FrameW [UIScreen mainScreen].bounds.size.width
-/** 屏幕的高度 */
-#define FrameH [UIScreen mainScreen].bounds.size.height
-
 /** 频道栏和下边滚动View的桥梁 */
 @interface JhtChannelBarAndSlideViewConnect : JhtTotalSlideView
 #pragma mark - property
@@ -53,18 +48,19 @@
 
 
 #pragma mark - Method
-/** 创建BarAndSliderView
- *  barAndSlideModel：用于设置sliderView和bar参数model
- *  itemEditModel：用于排序界面的参数设置
- *  delegate：代理
+/** 创建ChannelBarAndSliderView和排序删除界面
+ *  barAndSlideModel：用于设置sliderView和bar参数model（含有部分默写属性默认值）
+ *  itemEditModel：用于排序界面的参数设置（含有部分默写属性默认值）
+ *  channelArray：已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
  *  baseViewController：所处于的VC
  *  sortFView：排序界面放入的父view
  *  titleArray：所有的名字数组
+ *  delegate：代理
  */
-- (id)initSlideViewBarAndSlideModelWithModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withDelegte:(id<JhtTotalSlideViewDelegate>)delegate withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray;
+- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
 
 /** 根据名字数组，得到新的频道栏model */
-- (NSMutableArray *)getNewJhtChannelItemModelWithNameArray:(NSArray *)nameArray;
+- (NSMutableArray *)getNewChannelItemModelWithNameArray:(NSArray *)nameArray;
 
 /** 判断频道栏尾部按钮是否可以被点击
  *  enable:yes可以被点击 
@@ -72,8 +68,8 @@
 - (void)judgeChannelBarTailBtnIsEnableClick:(BOOL)enable;
 
 /** 隐藏或者出现小红点
- * hidden：yes隐藏
- * index：topBar 中频道栏的index
+ *  hidden：yes隐藏
+ *  index：topBar 中频道栏的index
  */
 - (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
 

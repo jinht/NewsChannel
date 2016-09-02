@@ -13,7 +13,7 @@
 
 /** title */
 @property (nonatomic, copy) NSString *titleName;
-/** 是否有小红点 */
+/** 是否显示小红点 */
 @property (nonatomic, assign) BOOL isShowRedPoint;
 
 
