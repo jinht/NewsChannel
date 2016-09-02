@@ -49,8 +49,8 @@
 
 #pragma mark - Method
 /** 创建ChannelBarAndSliderView和排序删除界面
- *  barAndSlideModel：用于设置sliderView和bar参数model（含有部分默写属性默认值）
- *  itemEditModel：用于排序界面的参数设置（含有部分默写属性默认值）
+ *  barAndSlideModel：用于设置sliderView和bar参数model（为了容错，含有部分属性默认值）
+ *  itemEditModel：用于排序界面的参数设置（为了容错，含有部分属性默认值）
  *  channelArray：已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
  *  baseViewController：所处于的VC
  *  sortFView：排序界面放入的父view
