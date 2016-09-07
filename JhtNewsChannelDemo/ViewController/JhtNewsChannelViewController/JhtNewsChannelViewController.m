@@ -9,7 +9,9 @@
 #import "JhtNewsChannelViewController.h"
 #import "JhtNewsViewController.h"
 #import "JhtNewsChannelItemModel.h"
+#import "JhtNewsChannelItemEditParamModel.h"
 #import "JhtChannelBarAndSlideViewConnect.h"
+#import "JhtChannelBarAndSlideViewConnectParamModel.h"
 
 /** 顶部滑动的条高度 */
 #define KTopSCHeight (90/2)

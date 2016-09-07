@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 #import "JhtTotalSlideView.h"
 #import "JhtChannelBarAndSlideViewConnect.h"
 

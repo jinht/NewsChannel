@@ -7,8 +7,8 @@
 //
 
 #import "JhtTotalSlideView.h"
-#import "JhtNewsChannelItemEditParamModel.h"
-#import "JhtChannelBarAndSlideViewConnectParamModel.h"
+@class JhtNewsChannelItemEditParamModel;
+@class JhtChannelBarAndSlideViewConnectParamModel;
 
 /** 频道栏和下边滚动View的桥梁 */
 @interface JhtChannelBarAndSlideViewConnect : JhtTotalSlideView
@@ -17,7 +17,7 @@
 @property (nonatomic, assign) NSInteger cacheCount;
 /** 频道数组 */
 @property (nonatomic, strong) NSMutableArray *channelArray;
-/** 上级传过来， 装有ChannelModel 待添加的数组 */
+/** 上级传过来，装有ChannelModel 待添加的数组 */
 @property (nonatomic, strong) NSMutableArray *toAddItemArray;
 
 /** 是否添加频道栏尾部的加号Btn */

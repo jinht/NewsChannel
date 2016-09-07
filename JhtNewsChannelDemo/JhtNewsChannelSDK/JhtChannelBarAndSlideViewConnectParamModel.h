@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JhtNewsChannelItemModel.h"
+@class JhtNewsChannelItemModel;
 
 /** 用于JhtChannelBarAndSlideViewConnect 设置的参数model */
 @interface JhtChannelBarAndSlideViewConnectParamModel : NSObject

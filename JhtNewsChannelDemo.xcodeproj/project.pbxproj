@@ -201,8 +201,8 @@
 				A5FB17AB1D76CE9D00BDFFC9 /* JhtTotalSlideView.h */,
 				A5FB17A41D76CE9D00BDFFC9 /* JhtChannelBarAndSlideViewConnect.h */,
 				A5FB17A81D76CE9D00BDFFC9 /* JhtNewsChannelItemModel.h */,
-				A5FB17A71D76CE9D00BDFFC9 /* JhtNewsChannelItemEditParamModel.h */,
 				A5FB17A51D76CE9D00BDFFC9 /* JhtChannelBarAndSlideViewConnectParamModel.h */,
+				A5FB17A71D76CE9D00BDFFC9 /* JhtNewsChannelItemEditParamModel.h */,
 				A5FB17A91D76CE9D00BDFFC9 /* JhtNewsChannelSDK.a */,
 				A5FB17A61D76CE9D00BDFFC9 /* JhtNewsChannelImages.bundle */,
 			);
@@ -494,6 +494,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtNewsChannelDemo/JhtNewsChannelSDK",
+					"$(PROJECT_DIR)/JhtNewsChannelDemo/JhtNewsChannelSDK/JhtNewsChannelImages.bundle",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jht.JhtNewsChannelDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -513,6 +514,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtNewsChannelDemo/JhtNewsChannelSDK",
+					"$(PROJECT_DIR)/JhtNewsChannelDemo/JhtNewsChannelSDK/JhtNewsChannelImages.bundle",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jht.JhtNewsChannelDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
