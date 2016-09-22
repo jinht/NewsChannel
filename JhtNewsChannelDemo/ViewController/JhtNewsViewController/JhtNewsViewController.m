@@ -38,7 +38,7 @@
 #pragma mark - Method
 /** 暴露给外边的刷新方法 */
 - (void)ghHeaderRefresh {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"处于选中状态，就是模拟刷新了哈，玩的愉快！" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"处于选中状态，模拟刷新了哈，玩的愉快！" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     alert.tag = 111;
     [alert show];
 }
