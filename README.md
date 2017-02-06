@@ -91,7 +91,7 @@
       <br>
       
  
-###Remind
+### Remind
 * ARC
 * iOS >= 7.0
 * iPhone \ iPad 
