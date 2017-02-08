@@ -16,15 +16,14 @@
 
 @end
 
-@implementation AppDelegate
 
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     JhtNewsChannelViewController *newsChannel = [[JhtNewsChannelViewController alloc
                                                   ] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:newsChannel];
     
-    // Override point for customization after application launch.
     return YES;
 }
 

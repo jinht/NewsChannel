@@ -66,7 +66,7 @@
 - (NSMutableArray *)getNewChannelItemModelWithNameArray:(NSArray *)nameArray;
 
 /** 判断频道栏尾部按钮是否可以被点击
- *  enable:yes可以被点击 
+ *  enable：yes可以被点击
  */
 - (void)judgeChannelBarTailBtnIsEnableClick:(BOOL)enable;
 

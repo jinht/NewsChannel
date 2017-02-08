@@ -10,11 +10,14 @@
 //
 
 #import "JhtNewsChannelViewController.h"
-#import "JhtNewsChannelSDK.h"
 #import "JhtNewsViewController.h"
+#import "JhtNewsChannelItemModel.h"
+#import "JhtNewsChannelItemEditParamModel.h"
+#import "JhtChannelBarAndSlideViewConnect.h"
+#import "JhtChannelBarAndSlideViewConnectParamModel.h"
 
 /** 顶部滑动的条高度 */
-#define KTopSCHeight (90/2)
+#define KTopSCHeight (90 / 2)
 /** 顶部滑动的条宽度*/
 #define KTopSCWidth (FrameW - 40)
 
@@ -22,7 +25,7 @@
     // 滑动的当前页
     NSInteger _currentPageIndex;
     
-    // 界面是否正在刷新;
+    // 界面是否正在刷新
     BOOL _isRefreshing;
 }
 /** 用于排序界面参数model */
@@ -38,6 +41,13 @@
 
 
 @implementation JhtNewsChannelViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // 隐藏导航栏
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,11 +65,11 @@
 #pragma mark - 生成数据源
 /** 生成数据源 */
 - (void)ncCreateData {
-    for (NSInteger i = 0; i < 15; i ++) {
+    for (NSInteger i = 0; i < 30; i ++) {
         JhtNewsChannelItemModel *model = [[JhtNewsChannelItemModel alloc] init];
         model.titleName = [NSString stringWithFormat:@"NO.%ld", i + 1];
         // 模拟添加频道小红点
-        if(i % 3) {
+        if (i % 3) {
             model.isShowRedPoint = YES;
         } else {
             model.isShowRedPoint = NO;
@@ -73,7 +83,7 @@
         [self.channelArray addObject:model];
     }
     // 待添加的数组
-    for (NSInteger i = 0; i < 15; i ++) {
+    for (NSInteger i = 0; i < 30; i ++) {
         JhtNewsChannelItemModel *model2 = [[JhtNewsChannelItemModel alloc] init];
         model2.titleName = [NSString stringWithFormat:@"New.%ld", i + 1];
         [self.toAddItemArray addObject:model2];
@@ -128,10 +138,13 @@
     barAndSliderModel.channelTailBtnModel = channelTailBtnModel;
     barAndSliderModel.channelSpaceAndRectModel = channelSpaceAndRectModel;
     
-    // sliderView的坐标
-    barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 0, FrameW, FrameH - KTopHeight);
     // 顶部频道条的坐标
     barAndSliderModel.channelSpaceAndRectModel.topBarFrame = CGRectMake(0, 0, KTopSCWidth, KTopSCHeight);
+    // sliderView的坐标
+    // case1：没有导航栏
+    barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 0, FrameW, FrameH - KTopHeight);
+    // case2：有导航栏
+//    barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 20, FrameW, FrameH - 20);
     // 整个topbar频道条两边空白距离
     barAndSliderModel.channelSpaceAndRectModel.itemTopBarSpace = 0;
     // 小红点的宽度
@@ -139,34 +152,32 @@
     // 小红点和字之间的距离
     barAndSliderModel.channelSpaceAndRectModel.itemLabelToRedSpace = 1;
     // 频道栏之间横向间距
-    barAndSliderModel.channelSpaceAndRectModel.itemSpace = 25*WidthScale375;
+    barAndSliderModel.channelSpaceAndRectModel.itemSpace = 25 * WidthScale375;
     // 频道栏与VC之间的距离
     barAndSliderModel.channelSpaceAndRectModel.channelBarBottomSpace = 0;
-    
-    
+
+    // 频道颜色
     barAndSliderModel.channelColorAndFontModel.itemNormalColor = UIColorFromRGB(0x666666);
     barAndSliderModel.channelColorAndFontModel.itemSelectedColor = UIColorFromRGB(0x61cbf5);
-    // 未选中的 字号
+    // 未选中的字号
     barAndSliderModel.channelColorAndFontModel.itemNormalFont = [UIFont systemFontOfSize:14];
     // 选中的字号
     barAndSliderModel.channelColorAndFontModel.itemSelectedFont = [UIFont systemFontOfSize:16];
     // 轨道颜色
     barAndSliderModel.channelColorAndFontModel.trackColor = UIColorFromRGB(0x61cbf5);
-    
-    
     // 是否有添加按钮，
     barAndSliderModel.channelTailBtnModel.isAddTailBtn = YES;
     // 设置旋转的加号的图标，不设置就用默认的
 //    barAndSliderModel.channelTailBtnModel.channelBarTailBtnAddImageViewImage = [UIImage imageNamed:@""];
     // 旋转加号的frame 可以设置也可以不设置，不设置就是默认的
 //    barAndSliderModel.channelSpaceAndRectModel.channelBarTailBtnFrame = CGRectMake(KGHTopSCWidth, 0, FrameW - KGHTopSCWidth, KGHTopSCHeight);
-    
+
     // 缓存总数
     barAndSliderModel.cacheCount = [titleArray count] > 6 ? 6 : [titleArray count];
     // 装有ChannelModel 待添加的数组
     barAndSliderModel.toAddItemArray = self.toAddItemArray;
     // 不能移动删除频道的名字数组
-    barAndSliderModel.notMoveNameArray = [[NSMutableArray alloc] initWithArray: @[@"NO.1", @"这是特殊情况"]];
+    barAndSliderModel.notMoveNameArray = [[NSMutableArray alloc] initWithArray: @[@"NO.15", @"这是特殊情况"]];
     // 选中的索引值
     barAndSliderModel.selectedIndex = _currentPageIndex;
     return barAndSliderModel;
@@ -189,10 +200,14 @@
         // 用于排序界面中 文字 等相关设置参数model
         JhtNewsChannelItemEditTextModel *textTitleItemModel = [[JhtNewsChannelItemEditTextModel alloc] init];
         
+        // 排序界面总高度
+        distanceItemModel.itemEditTotalHeight = FrameH;
+        // 顶部空余的透明层，默认就和外层保持一致（正常使用默认值，不做任何设置）
+//        distanceItemModel.itemEditTransparentHeight = 20;
         // 顶部排序删除部分高度
-        distanceItemModel.itemEditTopPartHeight = 90/2;
+        distanceItemModel.itemEditTopPartHeight = 90 / 2;
         // 中间已选部分和未选部分中间view 高度
-        distanceItemModel.itemEditAddTipViewPartHeight = 60/2;
+        distanceItemModel.itemEditAddTipViewPartHeight = 60 / 2;
         // 每个频道的 宽度
         distanceItemModel.itemEditChannelItemW = 78;
         // 每个频道的 高度
@@ -202,14 +217,14 @@
         // 每行的 频道个数
         distanceItemModel.itemEditRowChannelItemNum = 4;
         // 频道按钮的弧度
-        distanceItemModel.itemEditChannelBtnCornerRadius = 32/2;
+        distanceItemModel.itemEditChannelBtnCornerRadius = 32 / 2;
         
         
         // 排序顶部删除完成按钮 的 borderColor 颜色
         textColorItemModel.itemEditConfirmButtonBorderColor = [UIColor redColor];
         // 排序顶部删除完成按钮 的 文字颜色 颜色
         textColorItemModel.itemEditConfirmButtonTitleColor = [UIColor redColor];
-        // 排序栏目切换 文字颜色
+        // 排序 栏目切换 文字颜色
         textColorItemModel.itemEditTipsLabelTextColor = [UIColor blackColor];
         // 排序 界面中 点击添加更多栏目 文字颜色
         textColorItemModel.itemEditAddTipViewTextColor = [UIColor colorWithRed:0.07f green:0.07f blue:0.07f alpha:1.00f];
@@ -219,7 +234,7 @@
         textColorItemModel.itemEditChannelBtnNormalBtnTitleColor = [UIColor grayColor];
         
         
-        // 频道栏编辑 背景颜色
+        // 频道栏编辑 背景颜色（整体背景）
         backgroundColorItemModel.itemEditBackgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.96];
         // 频道栏 顶部栏目的背景
         backgroundColorItemModel.itemEditTopPartBackgroundColor = [UIColor whiteColor];
@@ -234,8 +249,14 @@
         textTitleItemModel.itemMiddleText = @"点击添加更多栏目";
         // 排序界面 顶部排序 左上角标题
         textTitleItemModel.itemTopTitleText = @"栏目切换";
+        // 排序界面 右上角 完成 文字
+        textTitleItemModel.itemSortCompletedText = @"完成";
+        // 排序界面 不存在频道删除功能时 频道栏右上角 显示的 文字
+        textTitleItemModel.itemSortNotExistDeleteText = @"拖拽排序";
+        // 排序界面 存在频道删除功能时 频道栏右上角 显示的 文字
+        textTitleItemModel.itemSortIsExistDeleteText = @"排序删除";
         
-        // 是否存在删除（排序删除， 或者只有排序没有删除
+        // 是否存在删除（排序删除，或者只有排序没有删除）
         _itemEditModel.isExistDelete = YES;
         
         _itemEditModel.backgroundColorItemModel = backgroundColorItemModel;
@@ -243,7 +264,7 @@
         _itemEditModel.distanceItemModel = distanceItemModel;
         _itemEditModel.textTitleItemModel = textTitleItemModel;
         
-        NSLog(@"%f",_itemEditModel.distanceItemModel.itemEditChannelItemW);
+//        NSLog(@"%f", _itemEditModel.distanceItemModel.itemEditChannelItemW);
     }
     return _itemEditModel;
 }
@@ -280,13 +301,11 @@
 }
 
 - (void)JhtTotalSlideView:(JhtTotalSlideView *)sender didSelectedAt:(NSInteger)index {
-    NSLog(@"current:%ld", (long)index);
     _currentPageIndex = index;
     NSString *key = [NSString stringWithFormat:@"%ld", (long)_currentPageIndex];
     JhtNewsChannelItemModel *model = _channelArray[index];
     id vc = [self.slideView.cache objectForKey:key];
     
-    NSLog(@"选中了：%@",model.titleName);
     if ([vc isKindOfClass:[JhtNewsViewController class]] && model.isShowRedPoint) {
         JhtNewsViewController *gh = vc;
         [gh ghHeaderRefresh];
@@ -296,14 +315,14 @@
         // 刷新的时候，尾巴按钮不可以被点击，刷新结束才允许排序界面出现
         [self.slideView judgeChannelBarTailBtnIsEnableClick:NO];
     } else {
-        // 刷新结束才允许，尾巴按钮可以被点击 ,可以出现排序界面出现
+        // 刷新结束才允许，尾巴按钮可以被点击，可以出现排序界面出现
         [self.slideView judgeChannelBarTailBtnIsEnableClick:YES];
     }
 }
 
 /** 排序之后的操作
- *  modelArr：model数组
- *  nameArray：名字数组
+ *  modelArr：JhtNewsChannelItemModel数组
+ *  nameArray：频道名字数组
  *  selectedIndex：选中的index
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex {
@@ -356,8 +375,6 @@
 
 
 
-
-
 #pragma mark - Tools
 /** 计算Label的高度 */
 - (CGSize)ncGetCurrentLabelSizeWithContent:(NSString *)content WithTextFont:(UIFont *)font WithWidthSize:(CGSize)newSize {
@@ -371,11 +388,6 @@
     }
     return size;
 }
-
-
-
-
-
 
 
 

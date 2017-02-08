@@ -13,6 +13,7 @@
 /** 频道栏_颜色和字号类_参数model */
 @interface JhtChannelBarColorAndFontModel : NSObject
 
+#pragma mark optional
 /** 频道常规颜色 */
 @property (nonatomic, strong) UIColor *itemNormalColor;
 /** 频道被选中的颜色 */

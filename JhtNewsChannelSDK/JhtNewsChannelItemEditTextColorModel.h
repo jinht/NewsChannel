@@ -14,6 +14,7 @@
 /** 排序界面_文字颜色_参数model */
 @interface JhtNewsChannelItemEditTextColorModel : NSObject
 
+#pragma mark optional
 /** 排序界面 顶部删除完成按钮 borderColor 颜色*/
 @property (nonatomic, strong) UIColor *itemEditConfirmButtonBorderColor;
 /** 排序界面 顶部删除完成按钮 文字颜色 颜色 */

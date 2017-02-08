@@ -14,6 +14,7 @@
 /** 频道栏&&sliderView_间距和坐标_参数model */
 @interface JhtChannelBarAndSlideViewSpaceAndFrameModel : NSObject
 
+#pragma mark optional
 /** sliderView的坐标 */
 @property (nonatomic, assign) CGRect sliderFrame;
 

@@ -11,9 +11,10 @@
 
 #import <UIKit/UIKit.h>
 
-/** 顶部频道Model */
+/** 频道Model */
 @interface JhtNewsChannelItemModel : NSObject
 
+#pragma mark required
 /** title */
 @property (nonatomic, copy) NSString *titleName;
 /** 是否显示小红点 */

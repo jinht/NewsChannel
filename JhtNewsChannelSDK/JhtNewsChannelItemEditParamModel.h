@@ -17,6 +17,12 @@
 /** 排序界面_参数model */
 @interface JhtNewsChannelItemEditParamModel : NSObject
 
+#pragma mark required
+/** 是否存在删除btn（排序删除，或者只有排序没有删除） Yes：存在删除 */
+@property (nonatomic, assign) BOOL isExistDelete;
+
+
+#pragma mark optional
 /** 排序界面_背景颜色_参数model */
 @property (nonatomic, strong) JhtNewsChannelItemEditBackgroundColorModel *backgroundColorItemModel;
 /** 排序界面_文字颜色_参数model */
@@ -25,9 +31,6 @@
 @property (nonatomic, strong) JhtNewsChannelItemEditDistanceModel *distanceItemModel;
 /** 排序界面_文字类_设置参数model */
 @property (nonatomic, strong) JhtNewsChannelItemEditTextModel *textTitleItemModel;
-
-/** 是否存在删除btn（排序删除，或者只有排序没有删除） Yes：存在删除 */
-@property (nonatomic, assign) BOOL isExistDelete;
 
 
 @end

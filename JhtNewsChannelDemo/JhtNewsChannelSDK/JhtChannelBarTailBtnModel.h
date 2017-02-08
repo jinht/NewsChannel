@@ -14,8 +14,12 @@
 /** 频道栏_尾部加号按钮_参数model */
 @interface JhtChannelBarTailBtnModel : NSObject
 
+#pragma mark required
 /** 是否添加频道栏尾部的加号Btn */
 @property (nonatomic, assign) BOOL isAddTailBtn;
+
+
+#pragma mark optional
 /** 尾部用于排序的加号按钮的坐标 */
 @property (nonatomic, assign) CGRect channelBarTailBtnFrame;
 /** 尾部用于排序的加号按钮 的图片 */

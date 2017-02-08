@@ -12,8 +12,9 @@
 #import <UIKit/UIKit.h>
 @class JhtTotalSlideView;
 
-#pragma mark - property
+#pragma mark - protocol
 @protocol JhtTotalSlideViewDelegate <NSObject>
+@required
 /** VC总数量 */
 - (NSInteger)numberOfTabsInJhtTotalSlideView:(JhtTotalSlideView *)sender;
 /** 当前index下的VC */
@@ -24,8 +25,8 @@
 - (void)JhtTotalSlideView:(JhtTotalSlideView *)sender didSelectedAt:(NSInteger)index;
 
 /** 排序之后的操作
- *  modelArr：model数组
- *  nameArray：名字数组
+ *  modelArr：JhtNewsChannelItemModel数组
+ *  nameArray：频道名字数组
  *  selectedIndex：选中的index
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
@@ -54,7 +55,7 @@
 
 
 
-#pragma mark - Method
+#pragma mark - Public Method
 /** 启动 */
 - (void)startUp;
 

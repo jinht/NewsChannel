@@ -16,7 +16,8 @@
 
 /** JhtChannelBarAndSlideViewConnect_参数model */
 @interface JhtChannelBarAndSlideViewConnectParamModel : NSObject
-#pragma mark - required
+
+#pragma mark required
 /** 缓存的页数 */
 @property (nonatomic, assign) NSInteger cacheCount;
 /** 选中的索引值 */
@@ -27,11 +28,11 @@
 /** 不能移动删除频道的名字数组 */
 @property (nonatomic, strong) NSMutableArray *notMoveNameArray;
 
-
-
-#pragma mark - optional
 /** 频道栏_尾部加号按钮_参数model */
 @property (nonatomic, strong) JhtChannelBarTailBtnModel *channelTailBtnModel;
+
+
+#pragma mark optional
 /** 频道栏_颜色和字号类_参数model */
 @property (nonatomic, strong) JhtChannelBarColorAndFontModel *channelColorAndFontModel;
 /** 频道栏&&sliderView_间距和坐标_参数model */
