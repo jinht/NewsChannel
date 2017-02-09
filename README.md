@@ -27,8 +27,8 @@
 &emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中的属性`notMoveNameArray`（不能移动频道的名字数组）设置频道位置固定, 设置属性`toAddItemArray`（用于存储JhtNewsChannelItemModel）设置待添加的数组；<br>
 &emsp;d. JhtNewsChannelItemEditParamModel：用于排序界面中相关设置参数model，包含`文字` && `文字颜色` && `距离` && `背景颜色` 类等相关设置。<br>
 注：JhtChannelBarAndSlideViewConnectParamModel和JhtChannelBarAndSlideViewConnectParamModel结构如下图<br>
-&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Model结构图/editParamModel.png"  width=210 height=282 />
-&emsp;JhtChannelBarAndSlideViewConnectParamModel结构图：<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Model结构图/connectParamModel.png"  width=210 height=374 />
+&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Model结构图/editParamModel.png"  width=244 height=329 />
+&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Model结构图/connectParamModel.png"  width=210 height=327 />
 <br>
 
 #### 2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
