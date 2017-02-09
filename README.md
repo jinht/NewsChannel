@@ -89,8 +89,6 @@
 &emsp;&emsp;2. 假使你想做频道编辑后的持久化存储可以在以下方法中实现
 <img src="https://cloud.githubusercontent.com/assets/13724367/21304949/9f752672-c603-11e6-9d1a-bd1b91ebb7fa.jpg"/>
 &emsp;&emsp;3. 最后，感谢大家长久以来的支持！
-
-      <br>
       
  
 ### Remind
