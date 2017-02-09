@@ -16,7 +16,7 @@
 3. 频道位置固定：可以设置单个或多个频道位置不可变动；
 4. 频道栏排序：可以在排序界面进行自定义排序（会有颤抖提示）；
 5. 频道增删：可以在排序界面进行自定义的增删频道，同时囊括排序功能。<br>
-注：排序或者增删之后的相应页面均可在缓存中找到！<br>
+* 注：排序或者增删之后的相应页面均可在缓存中找到！<br>
 
 
 ## GO
@@ -26,7 +26,7 @@
 &emsp;b. JhtChannelBarAndSlideViewConnectParamModel：用于切换频道栏界面中相关设置参数model，包含`尾部加号按钮` && `颜色和字号` && `间距和坐标`  类 和 `缓存页数` 等相关设置；<br>
 &emsp;c. 可以通过设置JhtChannelBarAndSlideViewConnectParamModel中的属性`notMoveNameArray`（不能移动频道的名字数组）设置频道位置固定, 设置属性`toAddItemArray`（用于存储JhtNewsChannelItemModel）设置待添加的数组；<br>
 &emsp;d. JhtNewsChannelItemEditParamModel：用于排序界面中相关设置参数model，包含`文字` && `文字颜色` && `距离` && `背景颜色` 类等相关设置。<br>
-注：JhtChannelBarAndSlideViewConnectParamModel和JhtNewsChannelItemEditParamModel结构如下图<br>
+* 注：JhtChannelBarAndSlideViewConnectParamModel和JhtNewsChannelItemEditParamModel结构如下图<br>
 &emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Model结构图/connectParamModel.png"  width=210 height=327 />
 &emsp;&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Model结构图/editParamModel.png"  width=244 height=329 />
 <br>
