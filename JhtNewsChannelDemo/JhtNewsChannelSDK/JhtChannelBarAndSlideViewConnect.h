@@ -29,7 +29,7 @@
 @property (nonatomic, strong) UIButton *channelBarTailBtn;
 
 /** 排序界面View */
-@property (strong, nonatomic) UIView *sortView;
+@property (nonatomic, strong) UIView *sortView;
 /** 排序界面放入的父view */
 @property (nonatomic, strong) UIView *sortFView;
 /** 不能移动的名字数组 */

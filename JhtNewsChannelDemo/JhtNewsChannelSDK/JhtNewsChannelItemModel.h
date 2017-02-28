@@ -16,7 +16,7 @@
 
 #pragma mark required
 /** title */
-@property (nonatomic, copy) NSString *titleName;
+@property (nonatomic, strong) NSString *titleName;
 /** 是否显示小红点 */
 @property (nonatomic, assign) BOOL isShowRedPoint;
 
