@@ -26,7 +26,7 @@
 @property (nonatomic, assign) id<JhtNewsViewControllerDelegate> delegate;
 
 /** 上级页面传过来的titleName */
-@property (nonatomic, copy) NSString *titleName;
+@property (nonatomic, strong) NSString *titleName;
 
 
 

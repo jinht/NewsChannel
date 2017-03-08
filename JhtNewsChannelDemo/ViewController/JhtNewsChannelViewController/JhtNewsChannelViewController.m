@@ -65,7 +65,7 @@
 #pragma mark - 生成数据源
 /** 生成数据源 */
 - (void)ncCreateData {
-    for (NSInteger i = 0; i < 30; i ++) {
+    for (NSInteger i = 0; i < 15; i ++) {
         JhtNewsChannelItemModel *model = [[JhtNewsChannelItemModel alloc] init];
         model.titleName = [NSString stringWithFormat:@"NO.%ld", i + 1];
         // 模拟添加频道小红点
@@ -83,7 +83,7 @@
         [self.channelArray addObject:model];
     }
     // 待添加的数组
-    for (NSInteger i = 0; i < 30; i ++) {
+    for (NSInteger i = 0; i < 15; i ++) {
         JhtNewsChannelItemModel *model2 = [[JhtNewsChannelItemModel alloc] init];
         model2.titleName = [NSString stringWithFormat:@"New.%ld", i + 1];
         [self.toAddItemArray addObject:model2];
@@ -141,9 +141,9 @@
     // 顶部频道条的坐标
     barAndSliderModel.channelSpaceAndRectModel.topBarFrame = CGRectMake(0, 0, KTopSCWidth, KTopSCHeight);
     // sliderView的坐标
-    // case1：没有导航栏
+    // case1：有导航栏
     barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 0, FrameW, FrameH - KTopHeight);
-    // case2：有导航栏
+    // case2：没有导航栏
 //    barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 20, FrameW, FrameH - 20);
     // 整个topbar频道条两边空白距离
     barAndSliderModel.channelSpaceAndRectModel.itemTopBarSpace = 0;
