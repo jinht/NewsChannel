@@ -19,7 +19,7 @@
 @end
 
 
-
+/** 展示VC */
 @interface JhtNewsViewController : JhtBaseViewController
 #pragma mark - property
 /** 代理 */
@@ -30,9 +30,9 @@
 
 
 
-#pragma mark - Method
+#pragma mark - Public Method
 /** 暴露给外边的刷新方法 */
-- (void)ghHeaderRefresh;
+- (void)headerRefresh;
 
 
 @end

@@ -83,7 +83,7 @@
         [self.channelArray addObject:model];
     }
     // 待添加的数组
-    for (NSInteger i = 0; i < 15; i ++) {
+    for (NSInteger i = 0; i < 30; i ++) {
         JhtNewsChannelItemModel *model2 = [[JhtNewsChannelItemModel alloc] init];
         model2.titleName = [NSString stringWithFormat:@"New.%ld", i + 1];
         [self.toAddItemArray addObject:model2];
@@ -107,6 +107,7 @@
 /** 导航栏设置 */
 - (void)ncSetNav {
     self.navigationController.navigationBar.translucent = NO;
+    
     [self createNavigationBarTitleViewWithLabelTitle:@"JhtNewsChannel"];
 }
 
@@ -141,9 +142,9 @@
     // 顶部频道条的坐标
     barAndSliderModel.channelSpaceAndRectModel.topBarFrame = CGRectMake(0, 0, KTopSCWidth, KTopSCHeight);
     // sliderView的坐标
-    // case1：有导航栏
+    // case1：没有导航栏
     barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 0, FrameW, FrameH - KTopHeight);
-    // case2：没有导航栏
+    // case2：有导航栏
 //    barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 20, FrameW, FrameH - 20);
     // 整个topbar频道条两边空白距离
     barAndSliderModel.channelSpaceAndRectModel.itemTopBarSpace = 0;
@@ -217,9 +218,10 @@
         // 每行的 频道个数
         distanceItemModel.itemEditRowChannelItemNum = 4;
         // 频道按钮的弧度
-        distanceItemModel.itemEditChannelBtnCornerRadius = 32 / 2;
+        distanceItemModel.itemEditChannelBtnCornerRadius = 32 / 2.0;
         
-        
+        // 每一个频道 边框颜色（最好与删除按钮颜色相同）
+        textColorItemModel.itemBtnBorderColor = [UIColor colorWithRed:0.64f green:0.64f blue:0.64f alpha:1.00f];
         // 排序顶部删除完成按钮 的 borderColor 颜色
         textColorItemModel.itemEditConfirmButtonBorderColor = [UIColor redColor];
         // 排序顶部删除完成按钮 的 文字颜色 颜色
@@ -307,8 +309,8 @@
     id vc = [self.slideView.cache objectForKey:key];
     
     if ([vc isKindOfClass:[JhtNewsViewController class]] && model.isShowRedPoint) {
-        JhtNewsViewController *gh = vc;
-        [gh ghHeaderRefresh];
+        JhtNewsViewController *news = vc;
+        [news headerRefresh];
         _isRefreshing = YES;
     }
     if (_isRefreshing) {

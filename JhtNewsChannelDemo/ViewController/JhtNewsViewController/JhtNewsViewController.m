@@ -11,20 +11,32 @@
 
 #import "JhtNewsViewController.h"
 
+@interface JhtNewsViewController() <UITableViewDelegate, UITableViewDataSource> {
+    UITableView *_tableView;
+}
+
+@end
+
+
 @implementation JhtNewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
-    label.center = CGPointMake(self.view.center.x, self.view.center.y - 64/2 - 45/2);
+    label.center = CGPointMake(self.view.center.x, self.view.center.y - 64 / 2 - 45 / 2);
     label.backgroundColor = [UIColor whiteColor];
     label.text = [NSString stringWithFormat:@"%@", self.titleName];
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
-    
     // 设置背景颜色
     [self newsSetBackgroundColor];
+    
+//    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 109) style:UITableViewStylePlain];
+//    _tableView.delegate = self;
+//    _tableView.backgroundColor = [UIColor redColor];
+//    _tableView.dataSource = self;
+//    [self.view addSubview:_tableView];
 }
 
 /** 设置背景颜色 */
@@ -35,9 +47,9 @@
 
 
 
-#pragma mark - Method
+#pragma mark - Public Method
 /** 暴露给外边的刷新方法 */
-- (void)ghHeaderRefresh {
+- (void)headerRefresh {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"处于选中状态，就是模拟刷新了哈，玩的愉快！" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     alert.tag = 111;
     [alert show];
@@ -56,6 +68,36 @@
         }
     }
 }
+
+
+
+#pragma mark - UITableViewDelegate
+/** - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"这是第 %ld 条数据", indexPath.row];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = indexPath.row;
+    NSLog(@"点击了%ld", index);
+} */
 
 
 

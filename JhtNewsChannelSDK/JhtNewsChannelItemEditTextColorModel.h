@@ -30,5 +30,8 @@
 /** 未选中频道Btn title的颜色 */
 @property (nonatomic, strong) UIColor *itemEditChannelBtnNormalBtnTitleColor;
 
+/** 每一个频道 边框颜色（最好与删除按钮颜色相同） */
+@property (nonatomic, strong) UIColor *itemBtnBorderColor;
+
 
 @end
