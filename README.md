@@ -25,7 +25,7 @@
 &emsp;d. JhtNewsChannelItemEditParamModel：用于排序界面中相关设置参数model，包含`文字` && `文字颜色` && `距离` && `背景颜色` 类等相关设置。<br>
 &emsp;e. JhtChannelBarAndSlideViewConnectParamModel和JhtNewsChannelItemEditParamModel结构如下图<br>
 <img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/ModelStructureDiagram/connectParamModel.png" width=210 height=327 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/ModelStructureDiagram/editParamModel.png" width=244 height=329 />
-* 注：model内部均注有必要/非必要标识
+* 注：model内部均注有required/optional区分标识，required为必要参数，需要进行相关传递；optional为个性化配置参数，内部均有相应默认值
 
 #### 2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
 ```oc
