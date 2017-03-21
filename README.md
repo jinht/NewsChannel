@@ -5,7 +5,7 @@
 #### 支持小红点标识 &amp;&amp; 懒加载 &amp;&amp; 缓存 &amp;&amp; 排序 &amp;&amp; 增删等。<br><br>
 
 ### 一言不合就上效果图
-<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/slide.gif"  width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/shake.gif" width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/deleteAndAdd.gif"  width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/redPoint.gif"  width=200 height=350 />
+<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/slide.gif" width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/shake.gif" width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/deleteAndAdd.gif" width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/redPoint.gif" width=200 height=350 />
 
 ### Function Description
 1. 单个频道小红点标识：JhtNewsChannelItemModel中`isShowRedPoint`为BOOL值，在生成频道栏数据Model时可以一起添加频道是否有小红点标识，在后续调接口设置小红点状态依旧照前述可以实现；
@@ -23,8 +23,7 @@
 &emsp;b. JhtChannelBarAndSlideViewConnectParamModel：用于切换频道栏界面中相关设置参数model，包含`尾部加号按钮` && `颜色和字号` && `间距和坐标` && `缓存页数` 等相关设置；<br>
 &emsp;c. JhtChannelBarAndSlideViewConnectParamModel中的属性`notMoveNameArray`（不能移动频道的名字数组）设置频道位置固定, `toAddItemArray`（用于存储JhtNewsChannelItemModel）属性用于设置待添加的频道数组；<br>
 &emsp;d. JhtNewsChannelItemEditParamModel：用于排序界面中相关设置参数model，包含`文字` && `文字颜色` && `距离` && `背景颜色` 类等相关设置。<br>
-* 注：JhtChannelBarAndSlideViewConnectParamModel和JhtNewsChannelItemEditParamModel结构如下图<br>
-
+* 注：JhtChannelBarAndSlideViewConnectParamModel和JhtNewsChannelItemEditParamModel结构如下图
 &emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Model结构图/connectParamModel.png"  width=210 height=327 />
 &emsp;&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Model结构图/editParamModel.png"  width=244 height=329 />
 <br>
