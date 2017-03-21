@@ -10,6 +10,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JhtTabBarController.h"
 #import "JhtNewsChannelViewController.h"
 
 @interface AppDelegate ()
@@ -20,9 +21,12 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    JhtNewsChannelViewController *newsChannel = [[JhtNewsChannelViewController alloc
-                                                  ] init];
+    JhtNewsChannelViewController *newsChannel = [[JhtNewsChannelViewController alloc                                     ] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:newsChannel];
+    
+    // 含有TabBar的情况
+//    JhtTabBarController *vc = [[JhtTabBarController alloc] init];
+//    self.window.rootViewController = vc;
     
     return YES;
 }

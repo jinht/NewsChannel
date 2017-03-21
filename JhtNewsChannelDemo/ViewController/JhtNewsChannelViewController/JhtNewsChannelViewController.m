@@ -112,7 +112,6 @@
 }
 
 
-
 #pragma mark - 顶部频道条部分
 /** 建立滑动条 */
 - (void)ncCreateTopScrollViewWithTitleArray:(NSArray *)titleArray {
@@ -120,7 +119,11 @@
         [_slideView removeFromSuperview];
     }
     JhtChannelBarAndSlideViewConnectParamModel *barAndSlideModel = [self createBarAndSliderModel:titleArray];
-    _slideView = [[[JhtChannelBarAndSlideViewConnect alloc] init] initSlideViewAndItemEditViewWithBarAndSlideModel:barAndSlideModel withNewsChannelItemEditModel:self.itemEditModel withChanelArray:self.channelArray withBaseViewController:self withSortFView:self.navigationController.view withTitleArray:titleArray withDelegte:self];
+    _slideView = [[[JhtChannelBarAndSlideViewConnect alloc] init] initSlideViewAndItemEditViewWithBarAndSlideModel:barAndSlideModel withNewsChannelItemEditModel:self.itemEditModel withIsExistNavOrTab:NT_OnlyHave_N withChanelArray:self.channelArray withBaseViewController:self withTitleArray:titleArray withDelegte:self];
+    
+    // 只适用于NT_OnlyHave_T || NT_None 两种形式（即不存在navigationBar），default = 20.0
+    _slideView.connectToTopSpace = 30;
+    
     [self.view addSubview:self.slideView];
 }
 
@@ -141,11 +144,7 @@
     
     // 顶部频道条的坐标
     barAndSliderModel.channelSpaceAndRectModel.topBarFrame = CGRectMake(0, 0, KTopSCWidth, KTopSCHeight);
-    // sliderView的坐标
-    // case1：没有导航栏
-    barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 0, FrameW, FrameH - KTopHeight);
-    // case2：有导航栏
-//    barAndSliderModel.channelSpaceAndRectModel.sliderFrame = CGRectMake(0, 20, FrameW, FrameH - 20);
+    
     // 整个topbar频道条两边空白距离
     barAndSliderModel.channelSpaceAndRectModel.itemTopBarSpace = 0;
     // 小红点的宽度
@@ -203,8 +202,6 @@
         
         // 排序界面总高度
         distanceItemModel.itemEditTotalHeight = FrameH;
-        // 顶部空余的透明层，默认就和外层保持一致（正常使用默认值，不做任何设置）
-//        distanceItemModel.itemEditTransparentHeight = 20;
         // 顶部排序删除部分高度
         distanceItemModel.itemEditTopPartHeight = 90 / 2;
         // 中间已选部分和未选部分中间view 高度
@@ -265,8 +262,6 @@
         _itemEditModel.textColorItemModel = textColorItemModel;
         _itemEditModel.distanceItemModel = distanceItemModel;
         _itemEditModel.textTitleItemModel = textTitleItemModel;
-        
-//        NSLog(@"%f", _itemEditModel.distanceItemModel.itemEditChannelItemW);
     }
     return _itemEditModel;
 }

@@ -10,6 +10,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JhtNewsChannelItemModel.h"
 #import "JhtChannelBarTailBtnModel.h"
 #import "JhtChannelBarColorAndFontModel.h"
 #import "JhtChannelBarAndSlideViewSpaceAndFrameModel.h"
@@ -23,8 +24,8 @@
 /** 选中的索引值 */
 @property (nonatomic, assign) NSInteger selectedIndex;
 
-/** 待添加的数组 存储JhtNewsChannelItemModel */
-@property (nonatomic, strong) NSMutableArray *toAddItemArray;
+/** 待添加的数组<JhtNewsChannelItemModel> */
+@property (nonatomic, strong) NSMutableArray<JhtNewsChannelItemModel> *toAddItemArray;
 /** 不能移动删除频道的名字数组 */
 @property (nonatomic, strong) NSMutableArray *notMoveNameArray;
 

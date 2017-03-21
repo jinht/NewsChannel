@@ -11,6 +11,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol JhtNewsChannelItemModel <NSObject>
+
+@end
+
+
 /** 频道Model */
 @interface JhtNewsChannelItemModel : NSObject
 

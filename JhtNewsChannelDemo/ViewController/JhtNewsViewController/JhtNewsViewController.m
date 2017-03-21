@@ -32,11 +32,11 @@
     // 设置背景颜色
     [self newsSetBackgroundColor];
     
-//    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 109) style:UITableViewStylePlain];
-//    _tableView.delegate = self;
-//    _tableView.backgroundColor = [UIColor redColor];
-//    _tableView.dataSource = self;
-//    [self.view addSubview:_tableView];
+    /** _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 109) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.backgroundColor = [UIColor redColor];
+    _tableView.dataSource = self;
+    [self.view addSubview:_tableView];*/
 }
 
 /** 设置背景颜色 */

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A516FA541E8123270051173E /* JhtTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A516FA531E8123270051173E /* JhtTabBarController.m */; };
 		A53BA2E51E06712400EA3CD8 /* JhtNewsChannelImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A53BA2DB1E06712400EA3CD8 /* JhtNewsChannelImages.bundle */; };
 		A53BA2E61E06712400EA3CD8 /* JhtNewsChannelSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A53BA2E21E06712400EA3CD8 /* JhtNewsChannelSDK.a */; };
 		A57C4AE21D5893F500E258DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C4AE11D5893F500E258DB /* main.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A516FA521E8123270051173E /* JhtTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtTabBarController.h; sourceTree = "<group>"; };
+		A516FA531E8123270051173E /* JhtTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtTabBarController.m; sourceTree = "<group>"; };
 		A53BA2D61E06712400EA3CD8 /* JhtChannelBarAndSlideViewConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtChannelBarAndSlideViewConnect.h; sourceTree = "<group>"; };
 		A53BA2D71E06712400EA3CD8 /* JhtChannelBarAndSlideViewConnectParamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtChannelBarAndSlideViewConnectParamModel.h; sourceTree = "<group>"; };
 		A53BA2D81E06712400EA3CD8 /* JhtChannelBarAndSlideViewSpaceAndFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtChannelBarAndSlideViewSpaceAndFrameModel.h; sourceTree = "<group>"; };
@@ -102,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A516FA511E8123270051173E /* JhtTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				A516FA521E8123270051173E /* JhtTabBarController.h */,
+				A516FA531E8123270051173E /* JhtTabBarController.m */,
+			);
+			path = JhtTabBarController;
+			sourceTree = "<group>";
+		};
 		A53BA2D51E06712400EA3CD8 /* JhtNewsChannelSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D05FEB1D5D62D800A6E424 /* JhtBaseViewController */,
+				A516FA511E8123270051173E /* JhtTabBarController */,
 				A5D05FF91D5D686800A6E424 /* JhtNewsChannelViewController */,
 				A5D05FF51D5D63B900A6E424 /* JhtNewsViewController */,
 			);
@@ -355,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A516FA541E8123270051173E /* JhtTabBarController.m in Sources */,
 				A5D05FF11D5D631C00A6E424 /* JhtBaseViewController.m in Sources */,
 				A57C4AE51D5893F500E258DB /* AppDelegate.m in Sources */,
 				A5D05FFC1D5D686800A6E424 /* JhtNewsChannelViewController.m in Sources */,

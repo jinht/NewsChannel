@@ -15,9 +15,6 @@
 @interface JhtChannelBarAndSlideViewSpaceAndFrameModel : NSObject
 
 #pragma mark optional
-/** sliderView的坐标 */
-@property (nonatomic, assign) CGRect sliderFrame;
-
 /** 顶部频道栏的坐标 */
 @property (nonatomic, assign) CGRect topBarFrame;
 
