@@ -6,9 +6,9 @@
 
 ### 一言不合就上效果图
 <img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/slide.gif"  width=200 height=350 />
-&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/shake.gif" width=200 height=350 />
-&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/deleteAndAdd.gif"  width=200 height=350 />
-&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/redPoint.gif"  width=200 height=350 />
+<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/shake.gif" width=200 height=350 />
+<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/deleteAndAdd.gif"  width=200 height=350 />
+<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/redPoint.gif"  width=200 height=350 />
 
 ### Function Description
 1. 单个频道小红点标识：JhtNewsChannelItemModel中`isShowRedPoint`为BOOL值，在生成频道栏数据Model时可以一起添加频道是否有小红点标识，在后续调接口设置小红点状态依旧照前述可以实现；
