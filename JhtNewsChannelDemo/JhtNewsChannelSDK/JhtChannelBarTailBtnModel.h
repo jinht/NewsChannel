@@ -20,9 +20,13 @@
 
 
 #pragma mark optional
-/** 尾部用于排序的加号按钮的坐标 */
+/** 尾部用于排序的加号按钮的坐标 
+ *  default：CGRectMake(self.channelBar.frame.size.width, 0, FrameW - self.channelBar.frame.size.width, self.channelBar.frame.size.height)
+ */
 @property (nonatomic, assign) CGRect channelBarTailBtnFrame;
-/** 尾部用于排序的加号按钮 的图片 */
+/** 尾部用于排序的加号按钮 的图片 
+ *  default：[UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"JhtNewsChannelImages.bundle/more"]]
+ */
 @property (nonatomic, strong) UIImage *channelBarTailBtnAddImageViewImage;
 
 

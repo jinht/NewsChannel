@@ -73,10 +73,9 @@ typedef NS_ENUM(NSUInteger, NT_IsExist) {
  *  withIsExistNavOrTab：是否含有NavigationBar || TabBar_枚举
  *  channelArray：已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
  *  baseViewController：所处于的VC
- *  titleArray：所有的名字数组
  *  delegate：代理
  */
-- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withIsExistNavOrTab:(NT_IsExist)isExistType  withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withTitleArray:(NSArray *)titleArray withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
+- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withIsExistNavOrTab:(NT_IsExist)isExistType  withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
 
 /** 根据名字数组，得到新的频道栏model */
 - (NSMutableArray *)getNewChannelItemModelWithNameArray:(NSArray *)nameArray;

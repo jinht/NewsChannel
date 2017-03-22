@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
-    label.center = CGPointMake(self.view.center.x, self.view.center.y - 64 / 2 - 45 / 2);
+    label.center = CGPointMake(self.view.center.x, self.view.center.y - 64 / 2.0 - 45 / 2.0);
     label.backgroundColor = [UIColor whiteColor];
     label.text = [NSString stringWithFormat:@"%@", self.titleName];
     label.textAlignment = NSTextAlignmentCenter;

@@ -24,9 +24,9 @@
     JhtNewsChannelViewController *newsChannel = [[JhtNewsChannelViewController alloc                                     ] init];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:newsChannel];
     
-    // 含有TabBar的情况
-//    JhtTabBarController *vc = [[JhtTabBarController alloc] init];
-//    self.window.rootViewController = vc;
+    /** // 含有TabBar的情况
+    JhtTabBarController *VC = [[JhtTabBarController alloc] init];
+    self.window.rootViewController = VC;*/
     
     return YES;
 }
