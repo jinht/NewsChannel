@@ -27,20 +27,19 @@
 <img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/ModelStructureDiagram/connectParamModel.png" width=210 height=327 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/ModelStructureDiagram/editParamModel.png" width=244 height=329 />
 * 注：model内部均注有required/optional区分标识<br>
 &emsp;&emsp;1. required：必要参数，需要进行相关传递<br>
-&emsp;&emsp;2. optional：个性化配置参数，内部均有相应默认值
+&emsp;&emsp;2. optional：个性化配置参数，内部均有相应默认值，已做详细标注
 
 #### 2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
 ```oc
 /** 创建ChannelBarAndSliderView和排序删除界面
  *  barAndSlideModel：用于设置sliderView和bar参数model（为了容错，含有部分属性默认值）
  *  itemEditModel：用于排序界面的参数设置（为了容错，含有部分属性默认值）
+ *  withIsExistNavOrTab：是否含有NavigationBar || TabBar_枚举
  *  channelArray：已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
  *  baseViewController：所处于的VC
- *  sortFView：排序界面放入的父view
- *  titleArray：所有的名字数组
  *  delegate：代理
  */
-- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
+- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withIsExistNavOrTab:(NT_IsExist)isExistType  withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
 ```
 
 #### 3. JhtTotalSlideViewDelegate 方法
@@ -86,7 +85,7 @@
 * 注：1. 对一些用户反馈的`缓存`疑惑统一解释一下，上面提到的缓存指的是，创建频道下的VC后且`app未重启`的情况下，进行频道编辑后，内部会优先使用之前创建的VC，假使不存在会重新创建新VC<br>
 &emsp;&emsp;2. 假使你想做频道编辑后的持久化存储可以在以下方法中实现
 <img src="https://cloud.githubusercontent.com/assets/13724367/21304949/9f752672-c603-11e6-9d1a-bd1b91ebb7fa.jpg"/>
-&emsp;&emsp;&emsp;&emsp;3. 在demo中可以查看相关的使用和配置方法<br>
+&emsp;&emsp;&emsp;&emsp;3. 在demo中可以查看相关的使用和配置方法，demo中已做详细标注<br>
 &emsp;&emsp;&emsp;&emsp;4. 最后，感谢大家长久以来的支持！
       
  
