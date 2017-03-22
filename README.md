@@ -32,8 +32,8 @@
 #### 2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
 ```oc
 /** 创建ChannelBarAndSliderView和排序删除界面
- *  barAndSlideModel：用于设置sliderView和bar参数model（为了容错，含有部分属性默认值）
- *  itemEditModel：用于排序界面的参数设置（为了容错，含有部分属性默认值）
+ *  barAndSlideModel：用于设置sliderView和bar参数model（含有部分属性默认值）
+ *  itemEditModel：用于排序界面的参数设置（含有部分属性默认值）
  *  withIsExistNavOrTab：是否含有NavigationBar || TabBar_枚举
  *  channelArray：已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
  *  baseViewController：所处于的VC
