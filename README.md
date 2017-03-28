@@ -8,12 +8,12 @@
 <img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/slide.gif" width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/shake.gif" width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/deleteAndAdd.gif" width=200 height=350 />&emsp;<img src="https://raw.githubusercontent.com/jinht/NewsChannel/master/ReadMEImages/Gif/redPoint.gif" width=200 height=350 />
 
 ### Function Description
-1. 单个频道小红点标识：JhtNewsChannelItemModel中`isShowRedPoint`为BOOL值，在生成频道栏数据Model时可以一起添加频道是否有小红点标识，在后续调接口设置小红点状态依旧照前述可以实现；
-2. 懒加载：页面不会全部加载（非scrollview），点击或者滑动到哪里加载相应页面，同时可以自己设置缓存的个数；
-3. 频道位置固定：可以设置单个或多个频道位置不可变动；
-4. 频道栏排序：可以在排序界面进行自定义排序（会有颤抖提示）；
-5. 频道增删：可以在排序界面进行自定义的增删频道，同时囊括排序功能；
-6. 说明：排序或者增删之后的相应页面均可在缓存中找到！
+1. 单个频道小红点标识：JhtNewsChannelItemModel中`isShowRedPoint`为BOOL值，在生成频道栏数据Model时可以一起添加频道是否有小红点标识，在后续调接口设置小红点状态依旧照前述可以实现
+2. 懒加载：页面不会全部加载（非scrollview），点击或者滑动到哪里加载相应页面，同时可以自己设置缓存的个数
+3. 频道位置固定：可以设置单个或多个频道位置不可变动
+4. 频道栏排序：可以在排序界面进行自定义排序（会有颤抖提示）
+5. 频道增删：可以在排序界面进行自定义的增删频道，同时囊括排序功能
+6. 说明：排序或者增删之后的相应页面均可在缓存中找到
 
 
 ## GO
