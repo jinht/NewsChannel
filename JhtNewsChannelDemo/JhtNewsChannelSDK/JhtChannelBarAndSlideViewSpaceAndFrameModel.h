@@ -20,7 +20,6 @@
  */
 @property (nonatomic, assign) CGRect topBarFrame;
 
-
 /** 频道栏之间横向间距 
  *  default：25
  */
@@ -33,7 +32,6 @@
  *  default：0
  */
 @property (nonatomic, assign) CGFloat itemTopBarSpace;
-
 
 /** 小红点的宽度 
  *  default：8

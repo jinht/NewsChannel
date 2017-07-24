@@ -14,7 +14,7 @@
 @class JhtChannelBarAndSlideViewConnectParamModel;
 
 /** 所在类是否含有NavigationBar || TabBar_枚举 */
-typedef NS_ENUM(NSUInteger, NT_IsExist) {
+typedef NS_ENUM(NSUInteger, Jht_IsExist_NT) {
     // 只含有NavigationBar（Default）
     NT_OnlyHave_N,
     // 只含有TabBar
@@ -68,14 +68,14 @@ typedef NS_ENUM(NSUInteger, NT_IsExist) {
 
 #pragma mark - Public Method
 /** 创建ChannelBarAndSliderView和排序删除界面
- *  barAndSlideModel：用于设置sliderView和bar参数model（为了容错，含有部分属性默认值）
- *  itemEditModel：用于排序界面的参数设置（为了容错，含有部分属性默认值）
+ *  barAndSlideModel：用于设置sliderView和bar参数model（含有部分属性默认值）
+ *  itemEditModel：用于排序界面的参数设置（含有部分属性默认值）
  *  withIsExistNavOrTab：是否含有NavigationBar || TabBar_枚举
  *  channelArray：已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
  *  baseViewController：所处于的VC
  *  delegate：代理
  */
-- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withIsExistNavOrTab:(NT_IsExist)isExistType  withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
+- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withIsExistNavOrTab:(Jht_IsExist_NT)isExistType  withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
 
 /** 根据名字数组，得到新的频道栏model */
 - (NSMutableArray *)getNewChannelItemModelWithNameArray:(NSArray *)nameArray;

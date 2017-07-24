@@ -32,7 +32,6 @@
  */
 @property (nonatomic, assign) CGFloat itemEditAddTipViewPartHeight;
 
-
 /** 每个频道的 宽度 
  *  default：78
  */
@@ -41,7 +40,6 @@
  *  default：32
  */
 @property (nonatomic, assign) CGFloat itemEditChannelItemH;
-
 
 /** 频道间 纵向间距 
  *  default：15

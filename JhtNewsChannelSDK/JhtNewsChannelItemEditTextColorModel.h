@@ -24,7 +24,6 @@
  */
 @property (nonatomic, strong) UIColor *itemEditConfirmButtonTitleColor;
 
-
 /** 排序界面 @"栏目切换" 文字颜色
  *  default：[UIColor blackColor]
  */
@@ -34,7 +33,6 @@
  */
 @property (nonatomic, strong) UIColor *itemEditAddTipViewTextColor;
 
-
 /** 选中频道Btn title的颜色 
  *  default：[UIColor redColor]
  */
@@ -43,7 +41,6 @@
  *  default：[UIColor grayColor]
  */
 @property (nonatomic, strong) UIColor *itemEditChannelBtnNormalBtnTitleColor;
-
 
 /** 每一个频道 边框颜色（最好与删除按钮颜色相同） 
  *  default：[UIColor colorWithRed:0.64f green:0.64f blue:0.64f alpha:1.00f]

@@ -23,12 +23,10 @@
  */
 @property (nonatomic, strong) UIColor *itemSelectedColor;
 
-
 /** 轨道颜色 
  *  default：UIColorFromRGB(0x61cbf5)
  */
 @property (nonatomic, strong) UIColor *trackColor;
-
 
 /** 未选中的 字号 
  *  default：[UIFont systemFontOfSize:14]
