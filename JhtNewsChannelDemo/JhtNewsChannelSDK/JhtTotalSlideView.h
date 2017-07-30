@@ -11,6 +11,16 @@
 
 #import <UIKit/UIKit.h>
 @class JhtTotalSlideView;
+@class JhtNewsChannelItemModel;
+
+/** 排序页面显示枚举 */
+typedef NS_ENUM(NSUInteger, Jht_SortView_state) {
+    // 将要展示排序页面
+    sortView_willShow,
+    // 已经展示出排序页面
+    sortView_DidShow,
+};
+
 
 #pragma mark - protocol
 @protocol JhtTotalSlideViewDelegate <NSObject>
@@ -25,11 +35,17 @@
 - (void)JhtTotalSlideView:(JhtTotalSlideView *)sender didSelectedAt:(NSInteger)index;
 
 /** 排序之后的操作
- *  modelArr：JhtNewsChannelItemModel数组
+ *  modelArr：已添加数组
  *  nameArray：频道名字数组
  *  selectedIndex：选中的index
+ *  toAddModelArr: 未添加数组
  */
-- (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
+- (void)JhtTotalSlideViewWithSortModelArr:(NSArray<JhtNewsChannelItemModel *> *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex withToAddModelArr:(NSArray<JhtNewsChannelItemModel *> *)toAddModelArr;
+
+/** 排序页面显示状态
+ * 	showState: 排序页面展示状态
+ */
+- (void)JhtSortViewShowState:(Jht_SortView_state)showState;
 
 @end
 
@@ -51,7 +67,7 @@
 /** 缓存代理 */
 @property (nonatomic, strong) id cache;
 
-@property (nonatomic, weak) id<JhtTotalSlideViewDelegate>delegate;
+@property (nonatomic, weak) id<JhtTotalSlideViewDelegate> delegate;
 
 
 

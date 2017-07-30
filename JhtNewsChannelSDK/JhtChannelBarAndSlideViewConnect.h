@@ -91,5 +91,9 @@ typedef NS_ENUM(NSUInteger, Jht_IsExist_NT) {
  */
 - (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
 
+/** 是否展示“排序拖拽”按钮
+ * hidden: Yes 隐藏
+ */
+- (void)isShowEditOrHiddenBtn:(BOOL)hidden;
 
 @end

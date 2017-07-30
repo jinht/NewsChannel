@@ -10,11 +10,14 @@
 //
 
 #import "JhtNewsChannelViewController.h"
-#import "JhtNewsChannelSDK.h"
 #import "JhtNewsViewController.h"
+#import "JhtNewsChannelItemModel.h"
+#import "JhtNewsChannelItemEditParamModel.h"
+#import "JhtChannelBarAndSlideViewConnect.h"
+#import "JhtChannelBarAndSlideViewConnectParamModel.h"
 
 /** 顶部滑动的条高度 */
-#define KTopSCHeight (90 / 2)
+static const CGFloat KTopSCHeight = (90 / 2.0);
 /** 顶部滑动的条宽度*/
 #define KTopSCWidth (FrameW - 40)
 
@@ -246,7 +249,7 @@
     return _barAndSlideModel;
 }
 
-/** 频道数组， 这里用get方法获取假数据，实际应用从网络获取直接赋值即可 */
+/** 频道数组，这里用get方法获取假数据，实际应用从网络获取直接赋值即可 */
 - (NSMutableArray *)channelArray {
     if (!_channelArray) {
         _channelArray = [[NSMutableArray alloc] init];
@@ -277,7 +280,7 @@
         _toAddItemArray = [[NSMutableArray alloc] init];
         
         // 待添加的数组
-        for (NSInteger i = 0; i < 30; i ++) {
+        for (NSInteger i = 0; i < 10; i ++) {
             JhtNewsChannelItemModel *model2 = [[JhtNewsChannelItemModel alloc] init];
             model2.titleName = [NSString stringWithFormat:@"New.%ld", i + 1];
             [_toAddItemArray addObject:model2];
@@ -325,13 +328,23 @@
 }
 
 /** 排序之后的操作
- *  modelArr：JhtNewsChannelItemModel数组
+ *  modelArr：已添加数组
  *  nameArray：频道名字数组
  *  selectedIndex：选中的index
+ *  toAddModelArr: 未添加数组
  */
-- (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex {
+- (void)JhtTotalSlideViewWithSortModelArr:(NSArray<JhtNewsChannelItemModel *> *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex withToAddModelArr:(NSArray<JhtNewsChannelItemModel *> *)toAddModelArr {
     self.channelArray = [[NSMutableArray alloc] initWithArray:modelArr];
     _currentPageIndex = selectedIndex;
+    self.toAddItemArray = [[NSMutableArray alloc] initWithArray:toAddModelArr];
+    NSLog(@"%@", self.toAddItemArray);
+}
+
+/** 排序页面显示状态
+ * 	showState: 排序页面展示状态
+ */
+- (void)JhtSortViewShowState:(Jht_SortView_state)showState {
+    NSLog(@"showState: %ld", showState);
 }
 
 
@@ -346,7 +359,7 @@
 }
 
 #pragma mark 根据名字找到数组
-/** 根据名字找到数组*/
+/** 根据名字找到数组 */
 - (NSInteger)ncGetIndexWithName:(NSString *)titleName {
     for (NSInteger i = 0; i < self.channelArray.count; i ++) {
         JhtNewsChannelItemModel *model = self.channelArray[i];
@@ -360,7 +373,7 @@
 
 #pragma mark 显示/隐藏小红点
 /** 显示/隐藏小红点
- * isHidden：区分显示/隐藏
+ * 	isHidden：区分显示/隐藏
  */
 - (void)ncHiddenRedBadgeWithName:(NSString *)titleName isHidden:(BOOL)isHidden {
     // 根据名字找到数组
