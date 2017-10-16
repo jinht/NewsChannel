@@ -50,7 +50,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
     [super viewWillAppear:animated];
     
     // 隐藏导航栏
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    //    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)viewDidLoad {
@@ -68,7 +68,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
 
 
 
-#pragma mark - 导航栏设置
+#pragma mark - Nav
 /** 导航栏设置 */
 - (void)ncSetNav {
     self.navigationController.navigationBar.translucent = NO;
@@ -78,7 +78,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
 
 
 
-#pragma mark - 顶部频道条部分
+#pragma mark - TopBar
 /** 建立滑动条 */
 - (void)ncCreateTopScrollView {
     if (_slideView) {
@@ -87,7 +87,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
     _slideView = [[[JhtChannelBarAndSlideViewConnect alloc] init] initSlideViewAndItemEditViewWithBarAndSlideModel:self.barAndSlideModel withNewsChannelItemEditModel:self.itemEditModel withIsExistNavOrTab:NT_OnlyHave_N withChanelArray:self.channelArray withBaseViewController:self withDelegte:self];
     
     // 只适用于NT_OnlyHave_T || NT_None 两种形式（即不存在navigationBar），default = 20.0
-//    _slideView.connectToTopSpace = 30;
+    //    _slideView.connectToTopSpace = 30;
     
     [self.view addSubview:self.slideView];
 }
@@ -112,7 +112,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
         // 用于排序界面中 文字 等相关设置参数model
         JhtNewsChannelItemEditTextModel *textTitleItemModel = [[JhtNewsChannelItemEditTextModel alloc] init];
         
-         
+        
         // 排序界面总高度
         distanceItemModel.itemEditTotalHeight = FrameH;
         // 顶部排序删除部分高度
@@ -167,7 +167,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
         textTitleItemModel.itemSortNotExistDeleteText = @"拖拽排序";
         // 排序界面 存在频道删除功能时 频道栏右上角 显示的 文字
         textTitleItemModel.itemSortIsExistDeleteText = @"排序删除";
-        textColorItemModel.itemEditConfirmButtonCornerRadius = 15;
+        //        textColorItemModel.itemEditConfirmButtonCornerRadius = 15.0;
         _itemEditModel.backgroundColorItemModel = backgroundColorItemModel;
         _itemEditModel.textColorItemModel = textColorItemModel;
         _itemEditModel.distanceItemModel = distanceItemModel;
@@ -207,41 +207,41 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
         /*
          *   以下内容为个性配置，可根据需求进行配置
          *
-        // 用于切换频道栏 颜色和坐标 设置的参数model
-        JhtChannelBarColorAndFontModel *channelColorAndFontModel = [[JhtChannelBarColorAndFontModel alloc] init];
-        _barAndSlideModel.channelColorAndFontModel = channelColorAndFontModel;
-        // 用于切换频道栏 距离和坐标 设置的参数model
-        JhtChannelBarAndSlideViewSpaceAndFrameModel *channelSpaceAndRectModel = [[JhtChannelBarAndSlideViewSpaceAndFrameModel alloc] init];
-        _barAndSlideModel.channelSpaceAndRectModel = channelSpaceAndRectModel;
-        
-        // 顶部频道条的坐标
-        channelSpaceAndRectModel.topBarFrame = CGRectMake(0, 0, KTopSCWidth, KTopSCHeight);
-        
-        // 整个topbar频道条两边空白距离
-        channelSpaceAndRectModel.itemTopBarSpace = 0;
-        // 小红点的宽度
-        channelSpaceAndRectModel.itemRedWidth = 8;
-        // 小红点和字之间的距离
-        channelSpaceAndRectModel.itemLabelToRedSpace = 1;
-        // 频道栏之间横向间距
-        channelSpaceAndRectModel.itemSpace = 25 * WidthScale375;
-        // 频道栏与VC之间的距离
-        channelSpaceAndRectModel.channelBarBottomSpace = 0;
-        
-        // 频道颜色
-        channelColorAndFontModel.itemNormalColor = UIColorFromRGB(0x666666);
-        channelColorAndFontModel.itemSelectedColor = UIColorFromRGB(0x61cbf5);
-        // 未选中的字号
-        channelColorAndFontModel.itemNormalFont = [UIFont systemFontOfSize:14];
-        // 选中的字号
-        channelColorAndFontModel.itemSelectedFont = [UIFont systemFontOfSize:16];
-        // 轨道颜色
-        channelColorAndFontModel.trackColor = UIColorFromRGB(0x61cbf5);
-        // 设置旋转的加号的图标，不设置就用默认的
-        //    channelTailBtnModel.channelBarTailBtnAddImageViewImage = [UIImage imageNamed:@""];
-        // 旋转加号的frame 可以设置也可以不设置，不设置就是默认的
-        //    channelSpaceAndRectModel.channelBarTailBtnFrame = CGRectMake(KGHTopSCWidth, 0, FrameW - KGHTopSCWidth, KGHTopSCHeight);
-        */
+         // 用于切换频道栏 颜色和坐标 设置的参数model
+         JhtChannelBarColorAndFontModel *channelColorAndFontModel = [[JhtChannelBarColorAndFontModel alloc] init];
+         _barAndSlideModel.channelColorAndFontModel = channelColorAndFontModel;
+         // 用于切换频道栏 距离和坐标 设置的参数model
+         JhtChannelBarAndSlideViewSpaceAndFrameModel *channelSpaceAndRectModel = [[JhtChannelBarAndSlideViewSpaceAndFrameModel alloc] init];
+         _barAndSlideModel.channelSpaceAndRectModel = channelSpaceAndRectModel;
+         
+         // 顶部频道条的坐标
+         channelSpaceAndRectModel.topBarFrame = CGRectMake(0, 0, KTopSCWidth, KTopSCHeight);
+         
+         // 整个topbar频道条两边空白距离
+         channelSpaceAndRectModel.itemTopBarSpace = 0;
+         // 小红点的宽度
+         channelSpaceAndRectModel.itemRedWidth = 8;
+         // 小红点和字之间的距离
+         channelSpaceAndRectModel.itemLabelToRedSpace = 1;
+         // 频道栏之间横向间距
+         channelSpaceAndRectModel.itemSpace = 25 * WidthScale375;
+         // 频道栏与VC之间的距离
+         channelSpaceAndRectModel.channelBarBottomSpace = 0;
+         
+         // 频道颜色
+         channelColorAndFontModel.itemNormalColor = UIColorFromRGB(0x666666);
+         channelColorAndFontModel.itemSelectedColor = UIColorFromRGB(0x61cbf5);
+         // 未选中的字号
+         channelColorAndFontModel.itemNormalFont = [UIFont systemFontOfSize:14];
+         // 选中的字号
+         channelColorAndFontModel.itemSelectedFont = [UIFont systemFontOfSize:16];
+         // 轨道颜色
+         channelColorAndFontModel.trackColor = UIColorFromRGB(0x61cbf5);
+         // 设置旋转的加号的图标，不设置就用默认的
+         //    channelTailBtnModel.channelBarTailBtnAddImageViewImage = [UIImage imageNamed:@""];
+         // 旋转加号的frame 可以设置也可以不设置，不设置就是默认的
+         //    channelSpaceAndRectModel.channelBarTailBtnFrame = CGRectMake(KGHTopSCWidth, 0, FrameW - KGHTopSCWidth, KGHTopSCHeight);
+         */
     }
     return _barAndSlideModel;
 }
@@ -274,7 +274,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
 /** 待添加的数组 这里用get方法获取假数据，实际应用从网络获取直接赋值即可 */
 - (NSMutableArray *)toAddItemArray {
     if (!_toAddItemArray) {
-        _toAddItemArray = [[NSMutableArray alloc] init];
+        _toAddItemArray = [NSMutableArray array];
         
         // 待添加的数组
         for (NSInteger i = 0; i < 10; i ++) {
@@ -338,7 +338,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
 }
 
 /** 排序页面显示状态
- * 	showState：排序页面展示状态
+ *     showState：排序页面展示状态
  */
 - (void)JhtSortViewShowState:(Jht_SortView_state)showState {
     NSLog(@"showState: %ld", showState);
@@ -359,7 +359,6 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
     [self ncHiddenRedBadgeWithName:titleName isHidden:YES];
 }
 
-#pragma mark 根据名字找到数组
 /** 根据名字找到数组 */
 - (NSInteger)ncGetIndexWithName:(NSString *)titleName {
     for (NSInteger i = 0; i < self.channelArray.count; i ++) {
@@ -372,9 +371,8 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
     return -1;
 }
 
-#pragma mark 显示/隐藏小红点
 /** 显示/隐藏小红点
- * 	isHidden：区分显示/隐藏
+ *     isHidden：区分显示/隐藏
  */
 - (void)ncHiddenRedBadgeWithName:(NSString *)titleName isHidden:(BOOL)isHidden {
     // 根据名字找到数组
@@ -426,3 +424,4 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
  */
 
 @end
+

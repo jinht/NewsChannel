@@ -36,7 +36,8 @@
     _tableView.delegate = self;
     _tableView.backgroundColor = [UIColor redColor];
     _tableView.dataSource = self;
-    [self.view addSubview:_tableView];*/
+    [self.view addSubview:_tableView];
+     */
 }
 
 /** 设置背景颜色 */
@@ -99,12 +100,6 @@
     NSLog(@"点击了%ld", index);
 } */
 
-
-
-#pragma mark - dealloc
-- (void)dealloc {
-    NSLog(@"ooo");
-}
 
 
 

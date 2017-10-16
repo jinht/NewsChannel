@@ -199,8 +199,8 @@
 			children = (
 				A5D05FEB1D5D62D800A6E424 /* JhtBaseViewController */,
 				A516FA511E8123270051173E /* JhtTabBarController */,
-				A5D05FF51D5D63B900A6E424 /* JhtNewsViewController */,
 				A5D05FF91D5D686800A6E424 /* JhtNewsChannelViewController */,
+				A5D05FF51D5D63B900A6E424 /* JhtNewsViewController */,
 				A54D45551F2D839100CBD1DF /* JhtSortViewDemoVC */,
 			);
 			path = ViewController;

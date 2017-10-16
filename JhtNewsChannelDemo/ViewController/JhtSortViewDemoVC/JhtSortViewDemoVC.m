@@ -14,7 +14,10 @@
 #import <JhtNewsChannel/JhtNewsChannelItemEditView.h>
 #import <JhtNewsChannel/JhtNewsChannelItemEditParamModel.h>
 
-@interface JhtSortViewDemoVC ()
+@interface JhtSortViewDemoVC () {
+    // 滑动的当前页
+    NSInteger _currentPageIndex;
+}
 
 /** 用于排序界面参数model */
 @property (nonatomic, strong) JhtNewsChannelItemEditParamModel *itemEditModel;
@@ -30,7 +33,7 @@
 /** 排序界面View */
 @property (nonatomic, strong) UIView *sortView;
 /** 选中的index */
-@property (nonatomic, assign) NSInteger currentPageIndex;
+//@property (nonatomic, assign) NSInteger currentPageIndex;
 
 @end
 
@@ -40,22 +43,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.translucent = NO;
+    _currentPageIndex = 0;
     
-    self.currentPageIndex = 0;
+    // 导航栏设置
+    [self svdvSetNav];
     
-    [self createNavigationBarTitleViewWithLabelTitle:@"JhtNewsChannel"];
-    
-    [self cbasShowSortView];
+    // 显示排序界面
+    [self svdvShowSortView];
 }
 
 
 
-#pragma mark - 折叠/显示排序界面相关操作
-#pragma mark 显示排序界面
+#pragma mark - Nav
+/** 导航栏设置 */
+- (void)svdvSetNav {
+    self.navigationController.navigationBar.translucent = NO;
+    
+    [self createNavigationBarTitleViewWithLabelTitle:@"JhtNewsChannel"];
+}
+
+
+
+#pragma mark - SortView
 /** 显示排序界面 */
-- (void)cbasShowSortView {
-    JhtNewsChannelItemModel *model = self.channelArray[self.currentPageIndex];
+- (void)svdvShowSortView {
+    JhtNewsChannelItemModel *model = self.channelArray[_currentPageIndex];
     __weak typeof(self) weakSelf = self;
     self.sortView = [[JhtNewsChannelItemEditView alloc] initWithTopBarItemArray:self.channelArray withToAddItemArray:self.toAddItemArray withSelectedName:model.titleName withNotMoveNameArray:self.notMoveNameArray isExistDeleteBtn:self.itemEditModel.isExistDelete withNewsChannelItemEditModel:self.itemEditModel withSortBlock:^(NSArray *modelArr, NSArray *nameArray, NSInteger selectIndex, NSArray *toAddNewModelArr) {
         NSLog(@"modelArr ==> %@", modelArr);
@@ -74,7 +86,6 @@
     CGFloat nceTopPartHeight = self.itemEditModel.distanceItemModel.itemEditTopPartHeight;
     // 顶部透明部分
     CGFloat nceTransparentHeight = self.itemEditModel.distanceItemModel.itemEditTransparentHeight;
-    NSLog(@"顶部透明部分:%f", nceTransparentHeight);
     // 修改加号的坐标
     CGRect frame = self.channelBarTailBtn.frame;
     frame.origin.y += nceTransparentHeight;
@@ -227,15 +238,15 @@
         [_channelBarTailBtn setBackgroundColor:[UIColor redColor]];
         _channelBarTailBtn.layer.cornerRadius = 5;
         
-        [_channelBarTailBtn addTarget:self action:@selector(cbasChannelTailBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [_channelBarTailBtn addTarget:self action:@selector(svdvChannelTailBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _channelBarTailBtn;
 }
 
 
 #pragma mark Get Method
-/** 频道栏尾部的Btn触发时间 */
--(void)cbasChannelTailBtnClick:(UIButton *)btn {
+/** 频道栏尾部的Btn触发事件 */
+-(void)svdvChannelTailBtnClick:(UIButton *)btn {
     // 返回的时候调用
     [(JhtNewsChannelItemEditView *)self.sortView packUpSelf];
 }
@@ -252,13 +263,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
