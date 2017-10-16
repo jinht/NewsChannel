@@ -10,9 +10,9 @@
 //
 
 #import "JhtSortViewDemoVC.h"
-#import "JhtNewsChannelItemModel.h"
-#import "JhtNewsChannelItemEditView.h"
-#import "JhtNewsChannelItemEditParamModel.h"
+#import <JhtNewsChannel/JhtNewsChannelItemModel.h>
+#import <JhtNewsChannel/JhtNewsChannelItemEditView.h>
+#import <JhtNewsChannel/JhtNewsChannelItemEditParamModel.h>
 
 @interface JhtSortViewDemoVC ()
 
@@ -58,9 +58,9 @@
     JhtNewsChannelItemModel *model = self.channelArray[self.currentPageIndex];
     __weak typeof(self) weakSelf = self;
     self.sortView = [[JhtNewsChannelItemEditView alloc] initWithTopBarItemArray:self.channelArray withToAddItemArray:self.toAddItemArray withSelectedName:model.titleName withNotMoveNameArray:self.notMoveNameArray isExistDeleteBtn:self.itemEditModel.isExistDelete withNewsChannelItemEditModel:self.itemEditModel withSortBlock:^(NSArray *modelArr, NSArray *nameArray, NSInteger selectIndex, NSArray *toAddNewModelArr) {
-        NSLog(@"modelArr == %@", modelArr);
-        NSLog(@"toAddNewModelArr == %@", toAddNewModelArr);
-        NSLog(@"selectIndex == %ld", selectIndex);
+        NSLog(@"modelArr ==> %@", modelArr);
+        NSLog(@"toAddNewModelArr ==> %@", toAddNewModelArr);
+        NSLog(@"selectIndex ==> %ld", selectIndex);
         weakSelf.channelArray = [[NSMutableArray alloc] initWithArray:modelArr];
         // 排序完成，待添加的数组 改变了
         weakSelf.toAddItemArray = [[NSMutableArray alloc] initWithArray:toAddNewModelArr];
@@ -74,7 +74,7 @@
     CGFloat nceTopPartHeight = self.itemEditModel.distanceItemModel.itemEditTopPartHeight;
     // 顶部透明部分
     CGFloat nceTransparentHeight = self.itemEditModel.distanceItemModel.itemEditTransparentHeight;
-    
+    NSLog(@"顶部透明部分:%f", nceTransparentHeight);
     // 修改加号的坐标
     CGRect frame = self.channelBarTailBtn.frame;
     frame.origin.y += nceTransparentHeight;
@@ -113,7 +113,7 @@
         // 中间已选部分和未选部分中间view 高度
         distanceItemModel.itemEditAddTipViewPartHeight = 60 / 2.0;
         // ** 单独使用《JhtNewsChannelItemEditView》时 必要参数 **
-        distanceItemModel.itemEditTransparentHeight = 64;
+        distanceItemModel.itemEditTransparentHeight = ([[UIApplication sharedApplication] statusBarFrame].size.height + 44);
         // 每个频道的 宽度
         distanceItemModel.itemEditChannelItemW = 78;
         // 每个频道的 高度

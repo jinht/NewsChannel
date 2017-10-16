@@ -22,7 +22,7 @@
 /** 动态获取导航栏的高度 */
 #define navBarHeight self.navigationController.navigationBar.frame.size.height
 /** 导航栏加状态栏的高度 */
-static const NSInteger KTopHeight = 64;
+#define KTopHeight = ([[UIApplication sharedApplication] statusBarFrame].size.height + 44)
 
 /** 颜色转换 */
 #define UIColorFromRGB(rgbValue) [UIColor \

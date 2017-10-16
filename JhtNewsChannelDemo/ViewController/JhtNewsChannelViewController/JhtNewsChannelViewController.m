@@ -11,10 +11,10 @@
 
 #import "JhtNewsChannelViewController.h"
 #import "JhtNewsViewController.h"
-#import "JhtNewsChannelItemModel.h"
-#import "JhtNewsChannelItemEditParamModel.h"
-#import "JhtChannelBarAndSlideViewConnect.h"
-#import "JhtChannelBarAndSlideViewConnectParamModel.h"
+#import <JhtNewsChannel/JhtNewsChannelItemModel.h>
+#import <JhtNewsChannel/JhtNewsChannelItemEditParamModel.h>
+#import <JhtNewsChannel/JhtChannelBarAndSlideViewConnect.h>
+#import <JhtNewsChannel/JhtChannelBarAndSlideViewConnectParamModel.h>
 
 /** 顶部滑动的条高度 */
 static const CGFloat KTopSCHeight = (90 / 2.0);
@@ -84,7 +84,6 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
     if (_slideView) {
         [_slideView removeFromSuperview];
     }
-    
     _slideView = [[[JhtChannelBarAndSlideViewConnect alloc] init] initSlideViewAndItemEditViewWithBarAndSlideModel:self.barAndSlideModel withNewsChannelItemEditModel:self.itemEditModel withIsExistNavOrTab:NT_OnlyHave_N withChanelArray:self.channelArray withBaseViewController:self withDelegte:self];
     
     // 只适用于NT_OnlyHave_T || NT_None 两种形式（即不存在navigationBar），default = 20.0
@@ -104,9 +103,6 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
         _itemEditModel.isExistDelete = YES;
         
         
-        /*
-         *   以下内容为个性配置，可根据需求进行配置
-         *
         // 用于排序界面中 背景颜色 等相关设置参数model
         JhtNewsChannelItemEditBackgroundColorModel *backgroundColorItemModel = [[JhtNewsChannelItemEditBackgroundColorModel alloc] init];
         // 用于排序界面中 文字颜色 等相关设置参数model
@@ -171,11 +167,12 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
         textTitleItemModel.itemSortNotExistDeleteText = @"拖拽排序";
         // 排序界面 存在频道删除功能时 频道栏右上角 显示的 文字
         textTitleItemModel.itemSortIsExistDeleteText = @"排序删除";
+        textColorItemModel.itemEditConfirmButtonCornerRadius = 15;
         _itemEditModel.backgroundColorItemModel = backgroundColorItemModel;
         _itemEditModel.textColorItemModel = textColorItemModel;
         _itemEditModel.distanceItemModel = distanceItemModel;
         _itemEditModel.textTitleItemModel = textTitleItemModel;
-         */
+        
     }
     return _itemEditModel;
 }
@@ -331,20 +328,24 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
  *  modelArr：已添加数组
  *  nameArray：频道名字数组
  *  selectedIndex：选中的index
- *  toAddModelArr: 未添加数组
+ *  toAddModelArr：未添加数组
  */
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray<JhtNewsChannelItemModel *> *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex withToAddModelArr:(NSArray<JhtNewsChannelItemModel *> *)toAddModelArr {
     self.channelArray = [[NSMutableArray alloc] initWithArray:modelArr];
     _currentPageIndex = selectedIndex;
     self.toAddItemArray = [[NSMutableArray alloc] initWithArray:toAddModelArr];
-    NSLog(@"%@", self.toAddItemArray);
+//    NSLog(@"%@", self.toAddItemArray);
 }
 
 /** 排序页面显示状态
- * 	showState: 排序页面展示状态
+ * 	showState：排序页面展示状态
  */
 - (void)JhtSortViewShowState:(Jht_SortView_state)showState {
     NSLog(@"showState: %ld", showState);
+    
+//    if (showState == sortView_DidShow) {
+//        [self.slideView isHiddenTopEditItemBtn:YES];
+//    }
 }
 
 
