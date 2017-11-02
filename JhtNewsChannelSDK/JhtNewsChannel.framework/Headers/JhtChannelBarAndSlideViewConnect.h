@@ -15,13 +15,13 @@
 
 /** 所在类是否含有NavigationBar || TabBar_枚举 */
 typedef NS_ENUM(NSUInteger, Jht_IsExist_NT) {
-    // 只含有NavigationBar（Default）
+    // 只有NavigationBar（Default）
     NT_OnlyHave_N,
-    // 只含有TabBar
+    // 只有TabBar
     NT_OnlyHave_T,
-    // NavigationBar && TabBar都含有
+    // NavigationBar && TabBar都有
     NT_Have,
-    // NavigationBar && TabBar都不含有
+    // NavigationBar && TabBar都不有
     NT_None
 };
 
@@ -70,15 +70,15 @@ typedef NS_ENUM(NSUInteger, Jht_IsExist_NT) {
 /** 创建ChannelBarAndSliderView和排序删除界面
  *  barAndSlideModel：用于设置sliderView和bar参数model（含有部分属性默认值）
  *  itemEditModel：用于排序界面的参数设置（含有部分属性默认值）
- *  withIsExistNavOrTab：是否含有NavigationBar || TabBar_枚举
+ *  isExistType：是否含有NavigationBar || TabBar
  *  channelArray：已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
  *  baseViewController：所处于的VC
  *  delegate：委托
  */
-- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withIsExistNavOrTab:(Jht_IsExist_NT)isExistType  withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
+- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel isExistNavOrTab:(Jht_IsExist_NT)isExistType withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
 
-/** 根据名字数组，得到新的频道栏model */
-- (NSMutableArray *)getNewChannelItemModelWithNameArray:(NSArray *)nameArray;
+/** 根据名字数组，查找新的频道栏model */
+- (NSMutableArray *)checkNewChannelItemModelWithNameArray:(NSArray *)nameArray;
 
 /** 判断频道栏尾部按钮是否可以被点击
  *  enable：YES--可以被点击

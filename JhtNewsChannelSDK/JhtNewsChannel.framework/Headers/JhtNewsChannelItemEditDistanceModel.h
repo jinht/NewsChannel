@@ -16,7 +16,7 @@
 
 #pragma mark required
 /** 顶部空余的透明层，默认就和外层保持一致（正常使用默认值，不做任何设置）
- *  default：[[UIApplication sharedApplication] statusBarFrame].size.height || 64
+ *  default：[[UIApplication sharedApplication] statusBarFrame].size.height || ([[UIApplication sharedApplication] statusBarFrame].size.height + KNavBarHeight)
  */
 @property (nonatomic, assign) CGFloat itemEditTransparentHeight;
 
@@ -27,7 +27,7 @@
  */
 @property (nonatomic, assign) CGFloat itemEditTotalHeight;
 
-/** 顶部条（顶部排序删除按钮部分）高度 
+/** 顶部条（顶部@"排序删除"按钮部分）高度 
  *  default：90 / 2.0
  */
 @property (nonatomic, assign) CGFloat itemEditTopPartHeight;

@@ -12,6 +12,7 @@
 
 #import "JhtTabBarController.h"
 #import "JhtNewsChannelViewController.h"
+#import <JhtNewsChannel/JhtNewsChannel_Define.h>
 
 @interface JhtTabBarController ()
 

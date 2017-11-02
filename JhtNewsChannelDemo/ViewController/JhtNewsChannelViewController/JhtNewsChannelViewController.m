@@ -11,6 +11,7 @@
 
 #import "JhtNewsChannelViewController.h"
 #import "JhtNewsViewController.h"
+#import <JhtNewsChannel/JhtNewsChannel_Define.h>
 #import <JhtNewsChannel/JhtNewsChannelItemModel.h>
 #import <JhtNewsChannel/JhtNewsChannelItemEditParamModel.h>
 #import <JhtNewsChannel/JhtChannelBarAndSlideViewConnect.h>
@@ -84,7 +85,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
     if (_slideView) {
         [_slideView removeFromSuperview];
     }
-    _slideView = [[[JhtChannelBarAndSlideViewConnect alloc] init] initSlideViewAndItemEditViewWithBarAndSlideModel:self.barAndSlideModel withNewsChannelItemEditModel:self.itemEditModel withIsExistNavOrTab:NT_OnlyHave_N withChanelArray:self.channelArray withBaseViewController:self withDelegte:self];
+    _slideView = [[[JhtChannelBarAndSlideViewConnect alloc] init] initSlideViewAndItemEditViewWithBarAndSlideModel:self.barAndSlideModel withNewsChannelItemEditModel:self.itemEditModel isExistNavOrTab:NT_OnlyHave_N withChanelArray:self.channelArray withBaseViewController:self withDelegte:self];
     
     // 只适用于NT_OnlyHave_T || NT_None 两种形式（即不存在navigationBar），default = 20.0
     //    _slideView.connectToTopSpace = 30;
@@ -341,7 +342,7 @@ static const CGFloat KTopSCHeight = (90 / 2.0);
  *     showState：排序页面展示状态
  */
 - (void)JhtSortViewShowState:(Jht_SortView_state)showState {
-    NSLog(@"showState: %ld", showState);
+//    NSLog(@"showState: %ld", showState);
     
 //    if (showState == sortView_DidShow) {
 //        [self.slideView isHiddenTopEditItemBtn:YES];

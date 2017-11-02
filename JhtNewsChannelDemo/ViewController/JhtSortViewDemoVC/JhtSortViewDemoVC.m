@@ -10,6 +10,7 @@
 //
 
 #import "JhtSortViewDemoVC.h"
+#import <JhtNewsChannel/JhtNewsChannel_Define.h>
 #import <JhtNewsChannel/JhtNewsChannelItemModel.h>
 #import <JhtNewsChannel/JhtNewsChannelItemEditView.h>
 #import <JhtNewsChannel/JhtNewsChannelItemEditParamModel.h>

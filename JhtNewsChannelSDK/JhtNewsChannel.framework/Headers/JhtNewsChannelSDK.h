@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "JhtNewsChannel_Define.h"
 
 #import "JhtTotalSlideView.h"
 #import "JhtChannelBarAndSlideViewConnect.h"

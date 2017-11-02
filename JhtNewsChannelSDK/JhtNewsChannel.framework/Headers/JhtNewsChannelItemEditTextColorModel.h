@@ -16,7 +16,7 @@
 
 #pragma mark optional
 /** 排序界面 顶部删除完成按钮圆角 cornerRadius
- *  defalut: CGRectGetHeight(self.confirmButton.frame) / 2
+ *  defalut: CGRectGetHeight(self.confirmButton.frame) / 2.0
  */
 @property (nonatomic, assign) CGFloat itemEditConfirmButtonCornerRadius;
 /** 排序界面 顶部删除完成按钮 borderColor 颜色 
