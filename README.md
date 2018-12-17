@@ -18,7 +18,20 @@
 
 ## GO
 ### How to use
-#### 1. 个性化设置<br>
+#### 1. podfile
+```oc
+platform:ios, '8.0'
+
+target '*****' do
+
+pod 'JhtNewsChannel'
+        
+end
+
+```
+
+
+#### 2. 个性化设置<br>
 &emsp;a. JhtNewsChannelItemModel：顶部频道Model，你可以继承这个model，来扩展满足自己需求的model；<br>
 &emsp;b. JhtChannelBarAndSlideViewConnectParamModel：用于切换频道栏界面中相关设置参数model，包含`尾部加号按钮` && `颜色和字号` && `间距和坐标` && `缓存页数` 等相关设置；<br>
 &emsp;c. JhtChannelBarAndSlideViewConnectParamModel中的属性`notMoveNameArray`（不能移动频道的名字数组）设置频道位置固定, `toAddItemArray`（用于存储JhtNewsChannelItemModel）属性用于设置待添加的频道数组；<br>
@@ -29,7 +42,8 @@
 &emsp;&emsp;1. required：必要参数，需要进行相关传递<br>
 &emsp;&emsp;2. optional：个性化配置参数，内部均有相应默认值
 
-#### 2. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
+
+#### 3. 建立滑频道条和可滑动的view：相关个性化设置均由传递的Model中参数实现
 ```oc
 /** 创建ChannelBarAndSliderView和排序删除界面
  *  barAndSlideModel：用于设置sliderView和bar参数model（为了容错，含有部分属性默认值）
@@ -43,7 +57,8 @@
 - (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withSortFView:(UIView *)sortFView withTitleArray:(NSArray *)titleArray withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
 ```
 
-#### 3. JhtTotalSlideViewDelegate 方法
+
+#### 4. JhtTotalSlideViewDelegate 方法
 ```oc
 @protocol JhtTotalSlideViewDelegate <NSObject>
 /** VC总数量 */
@@ -62,7 +77,8 @@
 - (void)JhtTotalSlideViewWithSortModelArr:(NSArray *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex;
 ```
 
-#### 4. `JhtChannelBarAndSlideViewConnect` 方法
+
+#### 5. `JhtChannelBarAndSlideViewConnect` 方法
 &emsp;a. 判断频道栏尾部按钮是否可以被点击
 ```oc
 /** 判断频道栏尾部按钮是否可以被点击
@@ -79,7 +95,8 @@
 - (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
 ```
 
-#### 5. 修改SDK切图资源
+
+#### 6. 修改SDK切图资源
 &emsp;如需替换SDK中的切图资源可以直接将`JhtNewsChannelImages.bundle`中的切图同名替换即可
 <br>
 
