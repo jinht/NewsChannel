@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A503908F1F945199008AB5F1 /* JhtNewsChannelImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A503908D1F945199008AB5F1 /* JhtNewsChannelImages.bundle */; };
-		A50390901F9451CC008AB5F1 /* JhtNewsChannel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A503908C1F945199008AB5F1 /* JhtNewsChannel.framework */; };
+		8EC6892D21C7DDD900B4AB3D /* JhtNewsChannelImages.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8EC6892B21C7DDD900B4AB3D /* JhtNewsChannelImages.bundle */; };
+		8EC6892E21C7DDD900B4AB3D /* JhtNewsChannel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC6892C21C7DDD900B4AB3D /* JhtNewsChannel.framework */; };
 		A516FA541E8123270051173E /* JhtTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A516FA531E8123270051173E /* JhtTabBarController.m */; };
 		A54D45581F2D839100CBD1DF /* JhtSortViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A54D45571F2D839100CBD1DF /* JhtSortViewDemoVC.m */; };
 		A57C4AE21D5893F500E258DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C4AE11D5893F500E258DB /* main.m */; };
@@ -16,8 +16,6 @@
 		A57C4AEB1D5893F500E258DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57C4AE91D5893F500E258DB /* Main.storyboard */; };
 		A57C4AED1D5893F500E258DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57C4AEC1D5893F500E258DB /* Assets.xcassets */; };
 		A57C4AF01D5893F500E258DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57C4AEE1D5893F500E258DB /* LaunchScreen.storyboard */; };
-		A57C4AFB1D5893F600E258DB /* JhtNewsChannelDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C4AFA1D5893F600E258DB /* JhtNewsChannelDemoTests.m */; };
-		A57C4B061D5893F600E258DB /* JhtNewsChannelDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A57C4B051D5893F600E258DB /* JhtNewsChannelDemoUITests.m */; };
 		A5D05FF11D5D631C00A6E424 /* JhtBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D05FF01D5D631C00A6E424 /* JhtBaseViewController.m */; };
 		A5D05FF81D5D63C600A6E424 /* JhtNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D05FF71D5D63C600A6E424 /* JhtNewsViewController.m */; };
 		A5D05FFC1D5D686800A6E424 /* JhtNewsChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D05FFB1D5D686800A6E424 /* JhtNewsChannelViewController.m */; };
@@ -41,9 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A50390891F9450DB008AB5F1 /* JhtNewsChannel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JhtNewsChannel.framework; path = JhtNewsChannelSDK/JhtNewsChannel.framework; sourceTree = "<group>"; };
-		A503908C1F945199008AB5F1 /* JhtNewsChannel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtNewsChannel.framework; sourceTree = "<group>"; };
-		A503908D1F945199008AB5F1 /* JhtNewsChannelImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtNewsChannelImages.bundle; sourceTree = "<group>"; };
+		8EC6892B21C7DDD900B4AB3D /* JhtNewsChannelImages.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JhtNewsChannelImages.bundle; sourceTree = "<group>"; };
+		8EC6892C21C7DDD900B4AB3D /* JhtNewsChannel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JhtNewsChannel.framework; sourceTree = "<group>"; };
 		A516FA521E8123270051173E /* JhtTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtTabBarController.h; sourceTree = "<group>"; };
 		A516FA531E8123270051173E /* JhtTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtTabBarController.m; sourceTree = "<group>"; };
 		A54D45561F2D839100CBD1DF /* JhtSortViewDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtSortViewDemoVC.h; sourceTree = "<group>"; };
@@ -57,11 +54,7 @@
 		A57C4AEF1D5893F500E258DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57C4AF11D5893F500E258DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A57C4AF61D5893F600E258DB /* JhtNewsChannelDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JhtNewsChannelDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57C4AFA1D5893F600E258DB /* JhtNewsChannelDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JhtNewsChannelDemoTests.m; sourceTree = "<group>"; };
-		A57C4AFC1D5893F600E258DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A57C4B011D5893F600E258DB /* JhtNewsChannelDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JhtNewsChannelDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57C4B051D5893F600E258DB /* JhtNewsChannelDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JhtNewsChannelDemoUITests.m; sourceTree = "<group>"; };
-		A57C4B071D5893F600E258DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5D05FEF1D5D631C00A6E424 /* JhtBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtBaseViewController.h; sourceTree = "<group>"; };
 		A5D05FF01D5D631C00A6E424 /* JhtBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JhtBaseViewController.m; sourceTree = "<group>"; };
 		A5D05FF61D5D63C600A6E424 /* JhtNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JhtNewsViewController.h; sourceTree = "<group>"; };
@@ -75,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A50390901F9451CC008AB5F1 /* JhtNewsChannel.framework in Frameworks */,
+				8EC6892E21C7DDD900B4AB3D /* JhtNewsChannel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,21 +89,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A50390881F9450DB008AB5F1 /* Frameworks */ = {
+		8EC6892A21C7DDD900B4AB3D /* JhtNewsChannel_SDK */ = {
 			isa = PBXGroup;
 			children = (
-				A50390891F9450DB008AB5F1 /* JhtNewsChannel.framework */,
+				8EC6892B21C7DDD900B4AB3D /* JhtNewsChannelImages.bundle */,
+				8EC6892C21C7DDD900B4AB3D /* JhtNewsChannel.framework */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A503908B1F945199008AB5F1 /* JhtNewsChannelSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A503908C1F945199008AB5F1 /* JhtNewsChannel.framework */,
-				A503908D1F945199008AB5F1 /* JhtNewsChannelImages.bundle */,
-			);
-			path = JhtNewsChannelSDK;
+			path = JhtNewsChannel_SDK;
 			sourceTree = "<group>";
 		};
 		A516FA511E8123270051173E /* JhtTabBarController */ = {
@@ -134,12 +119,9 @@
 		A57C4AD41D5893F500E258DB = {
 			isa = PBXGroup;
 			children = (
-				A503908B1F945199008AB5F1 /* JhtNewsChannelSDK */,
+				8EC6892A21C7DDD900B4AB3D /* JhtNewsChannel_SDK */,
 				A57C4ADF1D5893F500E258DB /* JhtNewsChannelDemo */,
-				A57C4AF91D5893F600E258DB /* JhtNewsChannelDemoTests */,
-				A57C4B041D5893F600E258DB /* JhtNewsChannelDemoUITests */,
 				A57C4ADE1D5893F500E258DB /* Products */,
-				A50390881F9450DB008AB5F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,24 +156,6 @@
 				A57C4AE11D5893F500E258DB /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A57C4AF91D5893F600E258DB /* JhtNewsChannelDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				A57C4AFA1D5893F600E258DB /* JhtNewsChannelDemoTests.m */,
-				A57C4AFC1D5893F600E258DB /* Info.plist */,
-			);
-			path = JhtNewsChannelDemoTests;
-			sourceTree = "<group>";
-		};
-		A57C4B041D5893F600E258DB /* JhtNewsChannelDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A57C4B051D5893F600E258DB /* JhtNewsChannelDemoUITests.m */,
-				A57C4B071D5893F600E258DB /* Info.plist */,
-			);
-			path = JhtNewsChannelDemoUITests;
 			sourceTree = "<group>";
 		};
 		A5D05FE01D5CAF7000A6E424 /* ViewController */ = {
@@ -300,7 +264,7 @@
 				TargetAttributes = {
 					A57C4ADC1D5893F500E258DB = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = BY48QUJK83;
+						DevelopmentTeam = 8C4D9692Z4;
 					};
 					A57C4AF51D5893F600E258DB = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -338,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A57C4AF01D5893F500E258DB /* LaunchScreen.storyboard in Resources */,
-				A503908F1F945199008AB5F1 /* JhtNewsChannelImages.bundle in Resources */,
+				8EC6892D21C7DDD900B4AB3D /* JhtNewsChannelImages.bundle in Resources */,
 				A57C4AED1D5893F500E258DB /* Assets.xcassets in Resources */,
 				A57C4AEB1D5893F500E258DB /* Main.storyboard in Resources */,
 			);
@@ -379,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57C4AFB1D5893F600E258DB /* JhtNewsChannelDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +350,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57C4B061D5893F600E258DB /* JhtNewsChannelDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,9 +476,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8C4D9692Z4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtNewsChannelSDK",
+					"$(PROJECT_DIR)/JhtNewsChannel_SDK",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JhtNewsChannelSDK/JhtNewsChannel.framework/Headers";
 				INFOPLIST_FILE = JhtNewsChannelDemo/Info.plist;
@@ -535,9 +499,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8C4D9692Z4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtNewsChannelSDK",
+					"$(PROJECT_DIR)/JhtNewsChannel_SDK",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/JhtNewsChannelSDK/JhtNewsChannel.framework/Headers";
 				INFOPLIST_FILE = JhtNewsChannelDemo/Info.plist;
