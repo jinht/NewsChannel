@@ -21,9 +21,9 @@
 @property (nonatomic, strong) UIScrollView *sortBigScrollView;
 /** 收起排序界面的 透明背景 Button */
 @property (nonatomic, strong) UIButton *sortViewOfPutAwayBtn;
-/** 上级传过来的，装有ChannelModel的数组 */
+/** 装有ChannelModel的数组 */
 @property (nonatomic, strong) NSMutableArray *topBarItemArray;
-/** 上级传过来，装有ChannelModel 待添加的数组 */
+/** 装有ChannelModel 待添加的数组 */
 @property (nonatomic, strong) NSMutableArray *toAddItemModelArray;
 /** 选中的名字 */
 @property (nonatomic, strong) NSString *selecteName;
@@ -41,28 +41,27 @@
 @property (nonatomic, strong) JhtNewsChannelItemEditParamModel *itemEditModel;
 
 
-
 #pragma mark - Public Method
 /** 返回上级页面的 回调
- *  modelArr：已添加（上部分）的modelArr
- *  toAddNewModelArr：未添加（下部分）的modelArr
- *  selectIndex：选中的index
+ *  modelArr: 已添加（上部分）的modelArr
+ *  toAddNewModelArr: 未添加（下部分）的modelArr
+ *  selectIndex: 选中的index
  */
 typedef void(^SortViewPopBlock)(NSArray *modelArr, NSArray *nameArray, NSInteger selectIndex, NSArray *toAddNewModelArr);
 /** 用于选中通知的block */
 typedef void(^NoticeBlock)();
 
 /** 初始化
- *  block：用于返回上级页面的 回调
- *  noticeBlock：用于选中通知的block
- *  topBarItemArray：装有ChannelModel的数组
- *  name：选中的名字
- *  notMoveArr：不能移动的名字数组
- *  isExistDelete：是否存在删除按钮 yes是存在删除
- *  ToAddItemArray：待添加的数组
- * 	itemEditModel：用于排序界面的参数设置
+ *  block: 用于返回上级页面的 回调
+ *  noticeBlock: 用于选中通知的block
+ *  topBarItemArray: 装有ChannelModel的数组
+ *  name: 选中的名字
+ *  notMoveArr: 不能移动的名字数组
+ *  isExistDelete: 是否存在删除按钮 yes是存在删除
+ *  ToAddItemArray: 待添加的数组
+ * 	itemEditModel: 用于排序界面的参数设置
  */
-- (id)initWithTopBarItemArray:(NSArray *)topBarItemArray withToAddItemArray:(NSArray *)toAddItemArray withSelectedName:(NSString *)name withNotMoveNameArray:(NSArray *)notMoveArr isExistDeleteBtn:(BOOL)isExistDelete withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel withSortBlock:(SortViewPopBlock)block withNoticeBlock:(NoticeBlock)noticeBlock;
+- (id)initWithTopBarItemArray:(NSArray *)topBarItemArray toAddItemArray:(NSArray *)toAddItemArray selectedName:(NSString *)name notMoveNameArray:(NSArray *)notMoveArr isExistDeleteBtn:(BOOL)isExistDelete newsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel sortBlock:(SortViewPopBlock)block noticeBlock:(NoticeBlock)noticeBlock;
 
 /** 收起自己 */
 - (void)packUpSelf;

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     
     s.name                       = 'JhtNewsChannel'
-    s.version                    = '1.0.1'
+    s.version                    = '1.0.2'
     s.summary                    = '新闻频道栏/滚动栏'
     s.homepage                   = 'https://github.com/jinht/NewsChannel'
     s.license                    = { :type => 'MIT', :file => 'LICENSE' }

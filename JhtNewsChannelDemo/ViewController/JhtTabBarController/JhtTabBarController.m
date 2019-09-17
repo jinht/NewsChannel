@@ -14,10 +14,6 @@
 #import "JhtNewsChannelViewController.h"
 #import <JhtNewsChannel/JhtNewsChannel_Define.h>
 
-@interface JhtTabBarController ()
-
-@end
-
 @implementation JhtTabBarController
 
 - (void)viewDidLoad {
@@ -66,21 +62,5 @@
     self.tabBar.tintColor = UIColorFromRGB(0xfd4444);
 }
 
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

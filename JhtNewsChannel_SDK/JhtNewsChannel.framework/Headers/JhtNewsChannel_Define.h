@@ -12,7 +12,7 @@
 #ifndef JhtNewsChannel_Define_h
 #define JhtNewsChannel_Define_h
 
-/** 屏幕的宽度*/
+/** 屏幕的宽度 */
 #define FrameW [UIScreen mainScreen].bounds.size.width
 /** 屏幕的高度 */
 #define FrameH [UIScreen mainScreen].bounds.size.height

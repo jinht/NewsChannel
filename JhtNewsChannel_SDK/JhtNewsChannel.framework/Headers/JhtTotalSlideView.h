@@ -32,7 +32,6 @@
 @property (nonatomic, weak) id<JhtTotalSlideViewDelegate> delegate;
 
 
-
 #pragma mark - Public Method
 /** 奔跑吧 */
 - (void)running;

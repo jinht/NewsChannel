@@ -33,8 +33,6 @@
 
 /** 排序界面View */
 @property (nonatomic, strong) UIView *sortView;
-/** 选中的index */
-//@property (nonatomic, assign) NSInteger currentPageIndex;
 
 @end
 
@@ -70,15 +68,15 @@
 - (void)svdvShowSortView {
     JhtNewsChannelItemModel *model = self.channelArray[_currentPageIndex];
     __weak typeof(self) weakSelf = self;
-    self.sortView = [[JhtNewsChannelItemEditView alloc] initWithTopBarItemArray:self.channelArray withToAddItemArray:self.toAddItemArray withSelectedName:model.titleName withNotMoveNameArray:self.notMoveNameArray isExistDeleteBtn:self.itemEditModel.isExistDelete withNewsChannelItemEditModel:self.itemEditModel withSortBlock:^(NSArray *modelArr, NSArray *nameArray, NSInteger selectIndex, NSArray *toAddNewModelArr) {
+    self.sortView = [[JhtNewsChannelItemEditView alloc] initWithTopBarItemArray:self.channelArray toAddItemArray:self.toAddItemArray selectedName:model.titleName notMoveNameArray:self.notMoveNameArray isExistDeleteBtn:self.itemEditModel.isExistDelete newsChannelItemEditModel:self.itemEditModel sortBlock:^(NSArray *modelArr, NSArray *nameArray, NSInteger selectIndex, NSArray *toAddNewModelArr) {
         NSLog(@"modelArr ==> %@", modelArr);
         NSLog(@"toAddNewModelArr ==> %@", toAddNewModelArr);
         NSLog(@"selectIndex ==> %ld", selectIndex);
         weakSelf.channelArray = [[NSMutableArray alloc] initWithArray:modelArr];
         // 排序完成，待添加的数组 改变了
-        weakSelf.toAddItemArray = [[NSMutableArray alloc] initWithArray:toAddNewModelArr];
+        weakSelf.toAddItemArray = [[NSMutableArray<JhtNewsChannelItemModel> alloc] initWithArray:toAddNewModelArr];
         _currentPageIndex = selectIndex;
-    } withNoticeBlock:^{
+    } noticeBlock:^{
     }];
     // 添加 view
     [self.navigationController.view addSubview:self.sortView];
@@ -101,7 +99,7 @@
 
 
 
-#pragma mark - Get
+#pragma mark - Getter
 /** 用于排序界面参数model */
 - (JhtNewsChannelItemEditParamModel *)itemEditModel {
     if (!_itemEditModel) {
@@ -179,6 +177,7 @@
         _itemEditModel.textTitleItemModel = textTitleItemModel;
         
     }
+    
     return _itemEditModel;
 }
 
@@ -204,13 +203,14 @@
             [_channelArray addObject:model];
         }
     }
+    
     return _channelArray;
 }
 
 /** 待添加的数组 这里用get方法获取假数据，实际应用从网络获取直接赋值即可 */
 - (NSMutableArray *)toAddItemArray {
     if (!_toAddItemArray) {
-        _toAddItemArray = [NSMutableArray array];
+        _toAddItemArray = [[NSMutableArray<JhtNewsChannelItemModel> alloc] init];
         
         // 待添加的数组
         for (NSInteger i = 0; i < 5; i ++) {
@@ -219,6 +219,7 @@
             [_toAddItemArray addObject:model2];
         }
     }
+    
     return _toAddItemArray;
 }
 
@@ -227,6 +228,7 @@
     if (!_notMoveNameArray) {
         _notMoveNameArray = [[NSMutableArray alloc] initWithArray: @[@"NO.15", @"这是特殊情况"]];
     }
+    
     return _notMoveNameArray;
 }
 
@@ -241,11 +243,12 @@
         
         [_channelBarTailBtn addTarget:self action:@selector(svdvChannelTailBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
+    
     return _channelBarTailBtn;
 }
 
 
-#pragma mark Get Method
+#pragma mark Getter Method
 /** 频道栏尾部的Btn触发事件 */
 -(void)svdvChannelTailBtnClick:(UIButton *)btn {
     // 返回的时候调用
@@ -264,13 +267,13 @@
 }
 
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

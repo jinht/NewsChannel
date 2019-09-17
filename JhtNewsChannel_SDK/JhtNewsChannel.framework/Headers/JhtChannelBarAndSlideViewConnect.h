@@ -28,6 +28,7 @@ typedef NS_ENUM(NSUInteger, Jht_IsExist_NT) {
 
 /** 频道栏和下边滚动View的结合体 */
 @interface JhtChannelBarAndSlideViewConnect : JhtTotalSlideView
+
 #pragma mark - property
 /** 缓存总数 */
 @property (nonatomic, assign) NSInteger cacheCount;
@@ -60,7 +61,7 @@ typedef NS_ENUM(NSUInteger, Jht_IsExist_NT) {
 @property (nonatomic, strong) JhtNewsChannelItemEditParamModel *itemEditModel;
 
 /** 整体距离顶部的高度
- *  注：只适用于NT_OnlyHave_T || NT_None 两种形式（即不存在navigationBar），default = [[UIApplication sharedApplication] statusBarFrame].size.height
+ *  注: 只适用于NT_OnlyHave_T || NT_None 两种形式（即不存在navigationBar），default = [[UIApplication sharedApplication] statusBarFrame].size.height
  */
 @property (nonatomic, assign) CGFloat connectToTopSpace;
 
@@ -68,31 +69,31 @@ typedef NS_ENUM(NSUInteger, Jht_IsExist_NT) {
 
 #pragma mark - Public Method
 /** 创建ChannelBarAndSliderView和排序删除界面
- *  barAndSlideModel：用于设置sliderView和bar参数model（含有部分属性默认值）
- *  itemEditModel：用于排序界面的参数设置（含有部分属性默认值）
- *  isExistType：是否含有NavigationBar || TabBar
- *  channelArray：已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
- *  baseViewController：所处于的VC
- *  delegate：委托
+ *  barAndSlideModel: 用于设置sliderView和bar参数model（含有部分属性默认值）
+ *  itemEditModel: 用于排序界面的参数设置（含有部分属性默认值）
+ *  isExistType: 是否含有NavigationBar || TabBar
+ *  channelArray: 已经添加的频道数组 存储JhtNewsChannelItemModel (必要参数，并且是存储JhtNewsChannelItemModel的数组)
+ *  baseViewController: 所处于的VC
+ *  delegate: 委托
  */
-- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel isExistNavOrTab:(Jht_IsExist_NT)isExistType withChanelArray:(NSMutableArray *)channelArray withBaseViewController:(id)baseViewController withDelegte:(id<JhtTotalSlideViewDelegate>)delegate;
+- (id)initSlideViewAndItemEditViewWithBarAndSlideModel:(JhtChannelBarAndSlideViewConnectParamModel *)barAndSlideModel withNewsChannelItemEditModel:(JhtNewsChannelItemEditParamModel *)itemEditModel isExistNavOrTab:(Jht_IsExist_NT)isExistType withChanelArray:(NSMutableArray *)channelArray baseViewController:(id)baseViewController delegte:(id<JhtTotalSlideViewDelegate>)delegate;
 
 /** 根据名字数组，查找新的频道栏model */
 - (NSMutableArray *)checkNewChannelItemModelWithNameArray:(NSArray *)nameArray;
 
 /** 判断频道栏尾部按钮是否可以被点击
- *  enable：YES--可以被点击
+ *  enable: YES--可以被点击
  */
 - (void)judgeChannelBarTailBtnIsEnableClick:(BOOL)enable;
 
 /** 隐藏或者出现小红点
- *  hidden：YES--隐藏
- *  index：topBar 中频道栏的index
+ *  hidden: YES--隐藏
+ *  index: topBar 中频道栏的index
  */
-- (void)redPonitIsHidden:(BOOL)hidden withIndex:(NSInteger)index;
+- (void)redPonitIsHidden:(BOOL)hidden index:(NSInteger)index;
 
 /** 是否展示“排序拖拽”按钮
- * 	hidden：YES--隐藏
+ * 	hidden: YES--隐藏
  */
 - (void)isHiddenTopEditItemBtn:(BOOL)hidden;
 

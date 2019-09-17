@@ -18,9 +18,8 @@
 @interface JhtNewsChannelItemEditParamModel : NSObject
 
 #pragma mark required
-/** 是否存在删除btn（排序删除，或者只有排序没有删除） Yes：存在删除 */
+/** 是否存在删除btn（排序删除，或者只有排序没有删除） Yes: 存在删除 */
 @property (nonatomic, assign) BOOL isExistDelete;
-
 
 #pragma mark optional
 /** 排序界面_背景颜色_参数model */

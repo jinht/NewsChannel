@@ -23,21 +23,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 创建UI
+    [self newsCreateUI];
+}
+
+
+
+#pragma mark - UI
+/** 创建UI */
+- (void)newsCreateUI {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
     label.center = CGPointMake(self.view.center.x, self.view.center.y - ([[UIApplication sharedApplication] statusBarFrame].size.height + 44) / 2.0 - 45 / 2.0);
     label.backgroundColor = [UIColor whiteColor];
     label.text = [NSString stringWithFormat:@"%@", self.titleName];
     label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:label];
+    
     // 设置背景颜色
     [self newsSetBackgroundColor];
     
-    /** _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 109) style:UITableViewStylePlain];
-    _tableView.delegate = self;
-    _tableView.backgroundColor = [UIColor redColor];
-    _tableView.dataSource = self;
-    [self.view addSubview:_tableView];
-     */
+    /* _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 109) style:UITableViewStylePlain];
+     _tableView.delegate = self;
+     _tableView.backgroundColor = [UIColor redColor];
+     _tableView.dataSource = self;
+     [self.view addSubview:_tableView];*/
 }
 
 /** 设置背景颜色 */
@@ -47,15 +56,12 @@
 }
 
 
-
 #pragma mark - Public Method
-/** 暴露给外边的刷新方法 */
 - (void)headerRefresh {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"处于选中状态，就是模拟刷新了哈，玩的愉快！" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     alert.tag = 111;
     [alert show];
 }
-
 
 
 #pragma mark - UIAlertViewDelegate
@@ -69,7 +75,6 @@
         }
     }
 }
-
 
 
 #pragma mark - UITableViewDelegate
@@ -101,21 +106,10 @@
 } */
 
 
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - dealloc
+- (void)dealloc {
+//    NSLog(@"JhtNewsViewController dealloc");
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

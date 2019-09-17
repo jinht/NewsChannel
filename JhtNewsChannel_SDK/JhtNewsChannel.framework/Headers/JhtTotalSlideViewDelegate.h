@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, Jht_SortView_state) {
 
 /** JhtTotalSlideView 委托 */
 @protocol JhtTotalSlideViewDelegate <NSObject>
+
 @required
 /** VC总数量 */
 - (NSInteger)numberOfTabsInJhtTotalSlideView:(JhtTotalSlideView *)sender;
@@ -35,17 +36,18 @@ typedef NS_ENUM(NSUInteger, Jht_SortView_state) {
 - (void)JhtTotalSlideView:(JhtTotalSlideView *)sender didSelectedAt:(NSInteger)index;
 
 /** 排序之后的操作
- *  modelArr：已添加数组
- *  nameArray：频道名字数组
- *  selectedIndex：选中的index
- *  toAddModelArr：未添加数组
+ *  modelArr: 已添加数组
+ *  nameArray: 频道名字数组
+ *  selectedIndex: 选中的index
+ *  toAddModelArr: 未添加数组
  */
-- (void)JhtTotalSlideViewWithSortModelArr:(NSArray<JhtNewsChannelItemModel *> *)modelArr withNameArray:(NSArray *)nameArray withSelectIndex:(NSInteger)selectedIndex withToAddModelArr:(NSArray<JhtNewsChannelItemModel *> *)toAddModelArr;
+- (void)JhtTotalSlideViewWithSortModelArr:(NSArray<JhtNewsChannelItemModel *> *)modelArr nameArray:(NSArray *)nameArray selectIndex:(NSInteger)selectedIndex toAddModelArr:(NSArray<JhtNewsChannelItemModel *> *)toAddModelArr;
 
 /** 排序页面显示状态
- *  showState：排序页面展示状态
+ *  showState: 排序页面展示状态
  */
 - (void)JhtSortViewShowState:(Jht_SortView_state)showState;
+
 
 @end
 

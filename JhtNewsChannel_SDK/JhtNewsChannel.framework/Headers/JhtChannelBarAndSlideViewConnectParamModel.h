@@ -32,7 +32,6 @@
 /** 频道栏_尾部加号按钮_参数model */
 @property (nonatomic, strong) JhtChannelBarTailBtnModel *channelTailBtnModel;
 
-
 #pragma mark optional
 /** 频道栏_颜色和字号类_参数model */
 @property (nonatomic, strong) JhtChannelBarColorAndFontModel *channelColorAndFontModel;

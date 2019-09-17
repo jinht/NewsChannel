@@ -264,7 +264,7 @@
 				TargetAttributes = {
 					A57C4ADC1D5893F500E258DB = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8C4D9692Z4;
+						DevelopmentTeam = Q67TW3T8PL;
 					};
 					A57C4AF51D5893F600E258DB = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -281,6 +281,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -476,7 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8C4D9692Z4;
+				DEVELOPMENT_TEAM = Q67TW3T8PL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtNewsChannelSDK",
@@ -499,7 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8C4D9692Z4;
+				DEVELOPMENT_TEAM = Q67TW3T8PL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JhtNewsChannelSDK",
